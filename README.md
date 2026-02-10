@@ -1,5 +1,5 @@
 # Godot_Finished_Games
-All of My currently created games using the Godot Engine
+All of My currently created games using the Godot Engine - Working to upload the Codebases of these Games. Reach out to me directly if you wish for copies. 
 
 Linus Meat Quest
 A Platformer game where the goal is to collect 10 meat and bring it to the altar in the cave
