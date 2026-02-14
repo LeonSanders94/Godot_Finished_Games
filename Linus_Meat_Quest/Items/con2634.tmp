@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c82ngadorq3hq"]
+
+[ext_resource type="Script" path="res://Items/meat_score.gd" id="1_0iaqx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tt0ub"]
+font_size = 12
+font_color = Color(0.388235, 0.215686, 0.239216, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 120.0
+offset_bottom = 19.0
+
+[node name="Meat_Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 76.0
+offset_bottom = 23.0
+text = "Meat Score:"
+label_settings = SubResource("LabelSettings_tt0ub")
+script = ExtResource("1_0iaqx")

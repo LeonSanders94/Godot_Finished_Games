@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://xbci40r81fok"]
+
+[ext_resource type="Script" path="res://carrier_spawn.gd" id="1_uauuh"]
+
+[node name="Carrier_spawn" type="Marker2D"]
+script = ExtResource("1_uauuh")
+
+[node name="carrier_spwn_tmr" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="carrier_spwn_tmr" to="." method="_on_carrier_spwn_tmr_timeout"]

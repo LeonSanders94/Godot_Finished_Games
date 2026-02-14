@@ -1,0 +1,652 @@
+[gd_scene load_steps=35 format=3 uid="uid://bbkif4y3sbi0l"]
+
+[ext_resource type="FontFile" uid="uid://cd5dgi0on2wri" path="res://UI/Fonts/Ethnocentric Rg It.otf" id="1_2abir"]
+[ext_resource type="Texture2D" uid="uid://crj53qlhvrg8h" path="res://Items/icons/charge_bolts_icon.png" id="1_4cap0"]
+[ext_resource type="Script" path="res://shop_version_2.gd" id="1_flwiy"]
+[ext_resource type="Texture2D" uid="uid://bm8ybf5cvmryv" path="res://UI/shop boxes/stats_box.png" id="1_klc35"]
+[ext_resource type="Texture2D" uid="uid://bagogwqploxxm" path="res://Items/icons/bulwark_icon.png" id="2_7st88"]
+[ext_resource type="Texture2D" uid="uid://ckm5dr8osxh70" path="res://UI/shop boxes/item_inv_box.png" id="2_gjt56"]
+[ext_resource type="StyleBox" uid="uid://dbk1osll8oki6" path="res://item_shop_background.tres" id="4_8gx0t"]
+[ext_resource type="FontFile" uid="uid://23gr8pmw4an4" path="res://UI/Fonts/bulletinV1.ttf" id="4_f5j2d"]
+[ext_resource type="Texture2D" uid="uid://ctyjv4vi3jxjm" path="res://Player/Player_ship_1.png" id="5_v0jpp"]
+[ext_resource type="LabelSettings" uid="uid://dvowrxae8uoje" path="res://shop_version_2_stats_fonts.tres" id="6_1vq82"]
+[ext_resource type="Texture2D" uid="uid://ce01m5lofo877" path="res://Items/icons/Fiendly_Memory_Core_Processing_Unit_Update_icon.png" id="6_q0pui"]
+[ext_resource type="Texture2D" uid="uid://l2poilxtqtuw" path="res://Items/icons/fighter_money_icon.png" id="7_cbx2g"]
+[ext_resource type="Texture2D" uid="uid://c1fpbto3imnsq" path="res://Items/icons/gel_layer_icon.png" id="8_lykjv"]
+[ext_resource type="Texture2D" uid="uid://3t4v8otfswgi" path="res://Items/icons/glass_cannon_icon.png" id="9_2q6c5"]
+[ext_resource type="Texture2D" uid="uid://bkcqglqk11f2g" path="res://Items/icons/health_plus_icon.png" id="10_j7aax"]
+[ext_resource type="Texture2D" uid="uid://duhmjp6v3jg3j" path="res://Items/icons/health_plus_plus_icon.png" id="11_x8nfa"]
+[ext_resource type="Texture2D" uid="uid://bjniybr6hvh3x" path="res://Items/icons/heal_bot_icon.png" id="12_njmdp"]
+[ext_resource type="Texture2D" uid="uid://duguuj17swpnt" path="res://Items/icons/heal_kit_icon.png" id="13_uwuuq"]
+[ext_resource type="Texture2D" uid="uid://d4i6776rh8obi" path="res://Items/icons/heavy_blaster_icon.png" id="14_5s5s5"]
+[ext_resource type="Texture2D" uid="uid://db74473xij8hd" path="res://Items/icons/heavy_plating_icon.png" id="15_86g86"]
+[ext_resource type="Texture2D" uid="uid://yqi34unvhixx" path="res://Items/icons/adv_blaster_icon.png" id="16_txpkv"]
+[ext_resource type="Texture2D" uid="uid://c2tckfmjqr0es" path="res://Items/icons/afterburner_icon.png" id="17_sq3b0"]
+[ext_resource type="FontFile" uid="uid://b7nx6w8c3wcjf" path="res://UI/Fonts/Ethnocentric Rg.otf" id="18_fo8vs"]
+[ext_resource type="Texture2D" uid="uid://b4a60k1sfqke7" path="res://UI/shop boxes/item_desc_box.png" id="21_i6d3k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltcdp"]
+texture = ExtResource("1_klc35")
+
+[sub_resource type="Theme" id="Theme_u8u14"]
+default_font = ExtResource("1_2abir")
+default_font_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6syki"]
+bg_color = Color(0.4704, 0.563827, 0.98, 0.698039)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.56, 0.56, 0.56, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x8kl"]
+bg_color = Color(0.4704, 0.563827, 0.98, 0.698039)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.56, 0.56, 0.56, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3i6x4"]
+texture = ExtResource("2_gjt56")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ocigv"]
+texture = ExtResource("21_i6d3k")
+modulate_color = Color(1, 1, 1, 0.698039)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mttco"]
+line_spacing = 1.0
+font = ExtResource("4_f5j2d")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xi7v"]
+bg_color = Color(6.16074e-06, 0.723361, 0.697714, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.832363, 0.369769, 0.056831, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlwf6"]
+bg_color = Color(0.793218, 0.121149, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmtv3"]
+bg_color = Color(0.2288, 0.369893, 0.88, 0.772549)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 3.0
+expand_margin_right = 7.0
+
+[node name="shopv2" type="Control"]
+layout_mode = 3
+anchor_right = 0.93
+anchor_bottom = 0.966316
+offset_left = 30.0
+offset_top = 8.0
+offset_right = 31.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_flwiy")
+metadata/_edit_use_anchors_ = true
+
+[node name="shop_background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_right = 492.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="stats_panel" type="Panel" parent="shop_background"]
+modulate = Color(1, 1, 1, 0.521569)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.587702
+anchor_right = 0.991936
+anchor_bottom = 0.664345
+offset_right = -6.10352e-05
+offset_bottom = -0.128052
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ltcdp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Shop_grid" type="GridContainer" parent="shop_background"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_top = 1.0
+offset_right = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="shop_background/Shop_grid"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="shop_background/Shop_grid"]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="shop_choices" type="HBoxContainer" parent="shop_background/Shop_grid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_u8u14")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Item_Background" type="Panel" parent="shop_background/Shop_grid/shop_choices"]
+custom_minimum_size = Vector2(128, 400)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_8gx0t")
+
+[node name="item1" type="Button" parent="shop_background/Shop_grid/shop_choices/Item_Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -185.0
+offset_right = 52.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Item Choice 1
+Cost"
+icon = ExtResource("1_4cap0")
+autowrap_mode = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Item_Background2" type="Panel" parent="shop_background/Shop_grid/shop_choices"]
+custom_minimum_size = Vector2(128, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("4_8gx0t")
+
+[node name="item2" type="Button" parent="shop_background/Shop_grid/shop_choices/Item_Background2"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 115.0
+offset_bottom = 389.0
+text = "Item Choice 2"
+icon = ExtResource("2_7st88")
+autowrap_mode = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Item_Background3" type="Panel" parent="shop_background/Shop_grid/shop_choices"]
+custom_minimum_size = Vector2(128, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("4_8gx0t")
+
+[node name="item3" type="Button" parent="shop_background/Shop_grid/shop_choices/Item_Background3"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 116.0
+offset_bottom = 390.0
+text = "Item Choice 2"
+icon = ExtResource("2_7st88")
+autowrap_mode = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Item_Background4" type="Panel" parent="shop_background/Shop_grid/shop_choices"]
+custom_minimum_size = Vector2(128, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("4_8gx0t")
+
+[node name="item4" type="Button" parent="shop_background/Shop_grid/shop_choices/Item_Background4"]
+layout_mode = 2
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 116.0
+offset_bottom = 387.0
+text = "Item Choice 2"
+icon = ExtResource("2_7st88")
+autowrap_mode = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Player_stats_box" type="SplitContainer" parent="shop_background/Shop_grid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+vertical = true
+
+[node name="Player_portrait" type="TextureRect" parent="shop_background/Shop_grid/Player_stats_box"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("5_v0jpp")
+expand_mode = 3
+
+[node name="player_portrait_background" type="Panel" parent="shop_background/Shop_grid/Player_stats_box/Player_portrait"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.114583
+anchor_top = -0.046875
+anchor_right = 1.08854
+anchor_bottom = 1.07813
+offset_right = 6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6syki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="shop_background/Shop_grid/Player_stats_box"]
+custom_minimum_size = Vector2(370, 464)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2x8kl")
+
+[node name="GridContainer" type="GridContainer" parent="shop_background/Shop_grid/Player_stats_box/Panel"]
+custom_minimum_size = Vector2(344, 440)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -224.0
+offset_right = 175.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 112
+theme_override_constants/v_separation = 1
+columns = 2
+
+[node name="Health" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Health"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Armor" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Armor"
+label_settings = ExtResource("6_1vq82")
+
+[node name="armor_num" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health3" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Shield"
+label_settings = ExtResource("6_1vq82")
+
+[node name="shield_num" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health4" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Speed"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num4" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health5" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Damage"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num5" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health6" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Fire Rate"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num6" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health7" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Health Regen"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num7" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health8" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Dodge"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num8" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health9" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Mini-Bots"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num9" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health10" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Life Steal"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num10" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health11" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Repair Kits"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num11" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health12" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Leech
+"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num12" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health13" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Magnet
+"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num13" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="Health14" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_mode = 2
+text = "Bullets
+"
+label_settings = ExtResource("6_1vq82")
+
+[node name="health_num14" type="Label" parent="shop_background/Shop_grid/Player_stats_box/Panel/GridContainer"]
+layout_direction = 3
+layout_mode = 2
+text = "-1
+"
+label_settings = ExtResource("6_1vq82")
+horizontal_alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="shop_background/Shop_grid"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="shop_background/Shop_grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="inv_panel" type="Panel" parent="shop_background/Shop_grid"]
+custom_minimum_size = Vector2(550, 275)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3i6x4")
+
+[node name="ItemList" type="ItemList" parent="shop_background/Shop_grid/inv_panel"]
+clip_contents = false
+layout_mode = 2
+anchor_left = 0.014
+anchor_top = 0.036
+anchor_right = 0.984
+anchor_bottom = 0.966
+offset_left = 0.16
+offset_top = 0.0999994
+offset_right = -0.0400391
+offset_bottom = 0.350006
+allow_search = false
+auto_height = true
+item_count = 12
+max_columns = 10
+fixed_column_width = 50
+icon_mode = 0
+icon_scale = 0.5
+item_0/icon = ExtResource("6_q0pui")
+item_1/icon = ExtResource("7_cbx2g")
+item_2/icon = ExtResource("8_lykjv")
+item_3/icon = ExtResource("9_2q6c5")
+item_4/icon = ExtResource("10_j7aax")
+item_5/icon = ExtResource("11_x8nfa")
+item_6/icon = ExtResource("12_njmdp")
+item_7/icon = ExtResource("13_uwuuq")
+item_8/icon = ExtResource("14_5s5s5")
+item_9/icon = ExtResource("15_86g86")
+item_10/icon = ExtResource("16_txpkv")
+item_11/icon = ExtResource("17_sq3b0")
+
+[node name="item_desc_panel" type="Panel" parent="shop_background/Shop_grid"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ocigv")
+
+[node name="Item_desc" type="Label" parent="shop_background/Shop_grid/item_desc_panel"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = 0.051
+anchor_right = 0.974
+anchor_bottom = 0.956
+offset_left = -0.148001
+offset_top = -0.0250006
+offset_right = 0.0879822
+offset_bottom = 0.100006
+grow_horizontal = 2
+text = "Item Descriptions will go here when the player hovers over the Items"
+label_settings = SubResource("LabelSettings_mttco")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="reroll" type="Button" parent="shop_background"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.119
+anchor_right = 0.584
+anchor_bottom = 0.62
+offset_left = 383.096
+offset_top = 433.95
+offset_right = 2.67194
+offset_bottom = 8.0
+scale = Vector2(0.750742, 0.849437)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("18_fo8vs")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xi7v")
+text = "Reroll"
+metadata/_edit_use_anchors_ = true
+
+[node name="cost_reroll" type="Label" parent="shop_background/reroll"]
+layout_mode = 0
+offset_left = 2.09808e-05
+offset_top = 49.4445
+offset_right = 157.0
+offset_bottom = 98.4445
+scale = Vector2(0.546261, 0.562859)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("18_fo8vs")
+theme_override_font_sizes/font_size = 36
+text = "Cost: 
+"
+vertical_alignment = 1
+
+[node name="price_reroll" type="Label" parent="shop_background/reroll"]
+layout_mode = 0
+offset_left = 85.249
+offset_top = 48.2672
+offset_right = 242.249
+offset_bottom = 97.2672
+scale = Vector2(0.630499, 0.613919)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("18_fo8vs")
+theme_override_font_sizes/font_size = 36
+text = "20"
+vertical_alignment = 1
+
+[node name="Not_Enoough" type="Label" parent="shop_background/reroll"]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = -85.249
+offset_right = 273.751
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_fonts/font = ExtResource("18_fo8vs")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlwf6")
+text = "NOT ENOUGH"
+
+[node name="Next_Round" type="Button" parent="shop_background"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.127
+anchor_right = 0.578
+anchor_bottom = 0.628
+offset_left = 89.7001
+offset_top = 427.35
+offset_right = -161.876
+offset_bottom = 8.39996
+scale = Vector2(0.669021, 0.860927)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("18_fo8vs")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jmtv3")
+text = "Next Round"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="shop_background/Next_Round" to="." method="_on_next_round_pressed"]

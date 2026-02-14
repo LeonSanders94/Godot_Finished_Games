@@ -1,0 +1,182 @@
+[gd_scene load_steps=24 format=3 uid="uid://v0r15mjagtr4"]
+
+[ext_resource type="Texture2D" uid="uid://bctl8lpo0yvrf" path="res://Enemies/Boss/Cyber_Face/Untitled.png" id="1_wyxqh"]
+[ext_resource type="Texture2D" uid="uid://x8tlxrkd8m6s" path="res://Enemies/Boss/Cyber_Face/ram.png" id="2_5xarl"]
+[ext_resource type="Texture2D" uid="uid://blnqmnt5bkk61" path="res://Enemies/Boss/Cyber_Face/star.png" id="3_2ycts"]
+[ext_resource type="Texture2D" uid="uid://brp3nphyloe4o" path="res://Enemies/Boss/Cyber_Face/missile.png" id="4_jf1f3"]
+[ext_resource type="Texture2D" uid="uid://bfon4e4ys4glk" path="res://Enemies/Boss/Cyber_Face/Laser_Canon.png" id="5_6a66s"]
+[ext_resource type="Texture2D" uid="uid://t81c45g85xem" path="res://Enemies/Boss/Cyber_Face/shield.png" id="6_yuq1j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soivp"]
+atlas = ExtResource("1_wyxqh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdoy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soivp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3s01"]
+atlas = ExtResource("2_5xarl")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjysr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3s01")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r37eg"]
+size = Vector2(21.2193, 46.4952)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dxpa"]
+atlas = ExtResource("3_2ycts")
+region = Rect2(0, 0, 32, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bn4fc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dxpa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whfkm"]
+size = Vector2(23.4333, 23.4334)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54drs"]
+atlas = ExtResource("4_jf1f3")
+region = Rect2(0, 0, 32, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_boiq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54drs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23bvg"]
+size = Vector2(15.1477, 31.7672)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y3o7"]
+atlas = ExtResource("5_6a66s")
+region = Rect2(0, 0, 32, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtc37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y3o7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbo2a"]
+size = Vector2(11.2941, 33.28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7em2"]
+atlas = ExtResource("6_yuq1j")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpwsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7em2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulgxc"]
+size = Vector2(290, 42)
+
+[node name="boss_1" type="Node2D"]
+
+[node name="CyberFace" type="CharacterBody2D" parent="."]
+
+[node name="head" type="AnimatedSprite2D" parent="CyberFace"]
+position = Vector2(504, -176)
+scale = Vector2(6.375, 6.25)
+sprite_frames = SubResource("SpriteFrames_vdoy6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CyberFace/head"]
+
+[node name="Ram" type="AnimatedSprite2D" parent="CyberFace/head"]
+position = Vector2(-44.3871, 1.08991e-06)
+scale = Vector2(0.709677, 0.880952)
+sprite_frames = SubResource("SpriteFrames_mjysr")
+
+[node name="rambox" type="Area2D" parent="CyberFace/head/Ram"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CyberFace/head/Ram/rambox"]
+position = Vector2(0.655972, -1.45298)
+shape = SubResource("RectangleShape2D_r37eg")
+
+[node name="spinner" type="AnimatedSprite2D" parent="CyberFace/head"]
+position = Vector2(43.3548, 4.57143)
+scale = Vector2(0.580645, 0.579365)
+sprite_frames = SubResource("SpriteFrames_bn4fc")
+
+[node name="spinnerbox" type="Area2D" parent="CyberFace/head/spinner"]
+position = Vector2(0, 3.8147e-06)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CyberFace/head/spinner/spinnerbox"]
+position = Vector2(0.976028, -2.36715)
+rotation = 0.785397
+shape = SubResource("RectangleShape2D_whfkm")
+
+[node name="missile" type="AnimatedSprite2D" parent="CyberFace/head"]
+position = Vector2(-25.8065, -34.2857)
+scale = Vector2(0.91129, 1.04762)
+sprite_frames = SubResource("SpriteFrames_boiq0")
+
+[node name="Area2D" type="Area2D" parent="CyberFace/head/missile"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CyberFace/head/missile/Area2D"]
+position = Vector2(0.0888939, -0.261837)
+shape = SubResource("RectangleShape2D_23bvg")
+
+[node name="Laser" type="AnimatedSprite2D" parent="CyberFace/head"]
+position = Vector2(33.098, -38.4)
+sprite_frames = SubResource("SpriteFrames_wtc37")
+
+[node name="laserbox" type="Area2D" parent="CyberFace/head/Laser"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CyberFace/head/Laser/laserbox"]
+position = Vector2(0.222641, 3.01714)
+shape = SubResource("RectangleShape2D_kbo2a")
+
+[node name="shield" type="AnimatedSprite2D" parent="CyberFace/head"]
+position = Vector2(0, 29.44)
+scale = Vector2(0.460784, 0.22)
+sprite_frames = SubResource("SpriteFrames_qpwsd")
+
+[node name="shieldbox" type="Area2D" parent="CyberFace/head/shield"]
+position = Vector2(-171.574, -5.81817)
+scale = Vector2(0.340425, 0.727272)
+
+[node name="Area2D" type="CollisionShape2D" parent="CyberFace/head/shield/shieldbox"]
+position = Vector2(503, 11)
+shape = SubResource("RectangleShape2D_ulgxc")

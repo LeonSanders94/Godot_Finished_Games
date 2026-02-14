@@ -1,0 +1,211 @@
+[gd_scene load_steps=15 format=3 uid="uid://bil5fa54oqdei"]
+
+[ext_resource type="Script" path="res://Enemies/ship_select.gd" id="1_jo2bq"]
+[ext_resource type="Texture2D" uid="uid://ckjyxpvrs7mno" path="res://Background/space_box.png" id="1_mdbwn"]
+[ext_resource type="Texture2D" uid="uid://ctyjv4vi3jxjm" path="res://Player/Player_ship_1.png" id="2_bh8nw"]
+[ext_resource type="FontFile" uid="uid://b7nx6w8c3wcjf" path="res://UI/Fonts/Ethnocentric Rg.otf" id="2_gcs7h"]
+[ext_resource type="Texture2D" uid="uid://krhndmp5jq3n" path="res://Player/Royal_Spear.png" id="3_g2xkk"]
+[ext_resource type="Texture2D" uid="uid://dfgg6ko7jg3mr" path="res://Player/Drone_Bus.png" id="4_cv375"]
+[ext_resource type="StyleBox" uid="uid://brak6vt1r0qqk" path="res://Enemies/themes/new_style_box_flat.tres" id="4_d0lpb"]
+[ext_resource type="StyleBox" uid="uid://cj74msdtt5r87" path="res://Background/BigSpace.tres" id="8_55hk3"]
+[ext_resource type="AudioStream" uid="uid://b0enjhay80cfs" path="res://sounds/Electronic Vol9 Countdown Intensity 2.mp3" id="9_eei30"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqwna"]
+bg_color = Color(0.5612, 0.0244, 0.61, 0.352941)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0.04, 0.745098)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2248n"]
+bg_color = Color(0.2838, 0.34142, 0.86, 0.345098)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(5.19812e-06, 0.351346, 0.933154, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_doqgl"]
+font = ExtResource("2_gcs7h")
+
+[sub_resource type="LabelSettings" id="LabelSettings_en02m"]
+font = ExtResource("2_gcs7h")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l7557"]
+font = ExtResource("2_gcs7h")
+font_size = 48
+font_color = Color(44.149, 100.02, 0.0666667, 1)
+outline_size = 14
+outline_color = Color(5.19812e-06, 0.351346, 0.933154, 1)
+
+[node name="Ship_Select" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -484.0
+offset_top = 24.0
+offset_right = -484.0
+offset_bottom = 24.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_jo2bq")
+
+[node name="background_border" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -72.0
+offset_right = 1028.0
+offset_bottom = 1000.0
+texture = ExtResource("1_mdbwn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 456.0
+offset_right = 824.0
+offset_bottom = 664.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dqwna")
+
+[node name="Old_Faithful" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 184.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("2_gcs7h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2248n")
+icon = ExtResource("2_bh8nw")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Royal_Spear" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 48.0
+offset_right = 360.0
+offset_bottom = 152.0
+icon = ExtResource("3_g2xkk")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Drone_Bus" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 48.0
+offset_right = 552.0
+offset_bottom = 152.0
+icon = ExtResource("4_cv375")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Ship_info" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 152.0
+offset_right = 496.0
+offset_bottom = 400.0
+theme_override_styles/normal = ExtResource("4_d0lpb")
+text = "Select a Ship"
+label_settings = SubResource("LabelSettings_doqgl")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ship" type="TextureRect" parent="Ship_info"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_top = 0.387
+anchor_right = 0.356
+anchor_bottom = 0.677
+offset_left = 0.120003
+offset_top = -7.97601
+offset_right = -0.160004
+offset_bottom = 2.10399
+grow_vertical = 2
+texture = ExtResource("2_bh8nw")
+metadata/_edit_use_anchors_ = true
+
+[node name="ship_stats" type="Label" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 152.0
+offset_right = 904.0
+offset_bottom = 400.0
+theme_override_styles/normal = ExtResource("4_d0lpb")
+text = "Select a Ship"
+label_settings = SubResource("LabelSettings_en02m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 80.0
+offset_right = 885.0
+offset_bottom = 145.0
+text = "Select Your Vessel"
+label_settings = SubResource("LabelSettings_l7557")
+
+[node name="Panel2" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = -808.0
+offset_top = -24.0
+offset_right = 48.0
+offset_bottom = 1000.0
+theme_override_styles/panel = ExtResource("8_55hk3")
+
+[node name="Panel4" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 952.0
+offset_top = -16.0
+offset_right = 1856.0
+offset_bottom = 1008.0
+rotation = 3.14159
+theme_override_styles/panel = ExtResource("8_55hk3")
+
+[node name="Panel5" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 952.0
+offset_top = -24.0
+offset_right = 1848.0
+offset_bottom = 1008.0
+theme_override_styles/panel = ExtResource("8_55hk3")
+
+[node name="Panel6" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 928.0
+offset_right = 1936.0
+offset_bottom = 1944.0
+rotation = 1.57079
+theme_override_styles/panel = ExtResource("8_55hk3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_eei30")
+volume_db = -8.92
+
+[connection signal="button_up" from="Panel/Old_Faithful" to="." method="_on_old_faithful_button_up"]
+[connection signal="mouse_entered" from="Panel/Old_Faithful" to="." method="_on_old_faithful_mouse_entered"]
+[connection signal="button_up" from="Panel/Royal_Spear" to="." method="_on_royal_spear_button_up"]
+[connection signal="mouse_entered" from="Panel/Royal_Spear" to="." method="_on_royal_spear_mouse_entered"]
+[connection signal="button_up" from="Panel/Drone_Bus" to="." method="_on_drone_bus_button_up"]
+[connection signal="mouse_entered" from="Panel/Drone_Bus" to="." method="_on_drone_bus_mouse_entered"]

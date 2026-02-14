@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://x838l3bvc2f0"]
+
+[ext_resource type="Script" path="res://Player/shop_ship.gd" id="1_2w37y"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_atdj8"]
+size = Vector2(192, 80)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ujsuk"]
+size = Vector2(98, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc16i"]
+size = Vector2(98, 64)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_g42gw"]
+size = Vector2(2, 2)
+
+[node name="shop_ship" type="Node2D"]
+script = ExtResource("1_2w37y")
+
+[node name="ship_bounds" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_atdj8")
+
+[node name="shop_ship_area" type="Area2D" parent="ship_bounds"]
+position = Vector2(0, 40)
+
+[node name="bay_door" type="Sprite2D" parent="ship_bounds/shop_ship_area"]
+modulate = Color(1, 0, 0, 1)
+show_behind_parent = true
+z_index = -1
+texture = SubResource("PlaceholderTexture2D_ujsuk")
+
+[node name="shipgrabber" type="CollisionShape2D" parent="ship_bounds/shop_ship_area"]
+shape = SubResource("RectangleShape2D_sc16i")
+
+[node name="Sprite2D" type="Sprite2D" parent="ship_bounds"]
+modulate = Color(0.16, 0.16, 0.16, 0.776471)
+position = Vector2(0, 40)
+scale = Vector2(96, 16)
+texture = SubResource("PlaceholderTexture2D_g42gw")
+
+[connection signal="body_entered" from="ship_bounds/shop_ship_area" to="." method="_on_shop_ship_area_body_entered"]

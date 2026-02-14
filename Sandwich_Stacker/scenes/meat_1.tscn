@@ -1,0 +1,164 @@
+[gd_scene load_steps=22 format=3 uid="uid://c2pkwwvwsv317"]
+
+[ext_resource type="Script" uid="uid://cty2gl2qey62e" path="res://scenes/meat_1.gd" id="1_38ln2"]
+[ext_resource type="Texture2D" uid="uid://eedgvyvd8mf0" path="res://assets/ingre.png" id="2_hms63"]
+[ext_resource type="Texture2D" uid="uid://dxclhtu3u6fcd" path="res://assets/fish_bone.png" id="3_fmgsu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmgsu"]
+atlas = ExtResource("2_hms63")
+region = Rect2(0, 15, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5718m"]
+atlas = ExtResource("2_hms63")
+region = Rect2(1200, 15, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv0i3"]
+atlas = ExtResource("2_hms63")
+region = Rect2(2400, 15, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qvue"]
+atlas = ExtResource("2_hms63")
+region = Rect2(3600, 15, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfgc1"]
+atlas = ExtResource("2_hms63")
+region = Rect2(0, 390, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykm5c"]
+atlas = ExtResource("2_hms63")
+region = Rect2(1200, 390, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cfaw"]
+atlas = ExtResource("2_hms63")
+region = Rect2(2400, 390, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5vww"]
+atlas = ExtResource("2_hms63")
+region = Rect2(3600, 390, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdcoi"]
+atlas = ExtResource("2_hms63")
+region = Rect2(0, 765, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksdkc"]
+atlas = ExtResource("2_hms63")
+region = Rect2(1200, 765, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0u1v"]
+atlas = ExtResource("2_hms63")
+region = Rect2(2400, 765, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fofu7"]
+atlas = ExtResource("2_hms63")
+region = Rect2(3600, 765, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2ejp"]
+atlas = ExtResource("2_hms63")
+region = Rect2(0, 1140, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nurqb"]
+atlas = ExtResource("2_hms63")
+region = Rect2(1200, 1140, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyk4m"]
+atlas = ExtResource("2_hms63")
+region = Rect2(2400, 1140, 1200, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hose"]
+atlas = ExtResource("2_hms63")
+region = Rect2(3600, 1140, 1200, 375)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pb7vo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmgsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5718m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv0i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qvue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfgc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykm5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cfaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5vww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdcoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksdkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0u1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fofu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2ejp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nurqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyk4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hose")
+}],
+"loop": false,
+"name": &"meat",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w4sc"]
+size = Vector2(95, 2)
+
+[node name="meat_1" type="Area2D" groups=["ingredients"]]
+script = ExtResource("1_38ln2")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(2.499998, 0.33333337)
+scale = Vector2(0.49479166, 0.16666667)
+color = Color(0.83891976, 0.4442548, 0.6638512, 1)
+polygon = PackedVector2Array(-96, 4, -96, -8, 96, -8, 96, 4, 1, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.4999986, -4.749999)
+scale = Vector2(0.12416665, 0.10533333)
+sprite_frames = SubResource("SpriteFrames_pb7vo")
+animation = &"meat"
+frame = 6
+frame_progress = 0.016814483
+speed_scale = 0.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="AnimatedSprite2D"]
+visible = false
+show_behind_parent = true
+position = Vector2(-36.2416, 45.09493)
+scale = Vector2(8.053692, 9.493671)
+amount = 3
+texture = ExtResource("3_fmgsu")
+emission_shape = 3
+emission_rect_extents = Vector2(25, 1)
+gravity = Vector2(0, -150)
+scale_amount_min = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.500002, -1.1920929e-07)
+shape = SubResource("RectangleShape2D_0w4sc")
+debug_color = Color(0.86203235, 0.17353532, 0.7736079, 0.41960785)

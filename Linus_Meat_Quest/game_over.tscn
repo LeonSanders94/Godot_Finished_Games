@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnrn2u4ra8ksh"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_v1bfj"]
+[ext_resource type="AudioStream" uid="uid://bwgfh4mdph7yv" path="res://audio/game-over-284367.mp3" id="2_yw76t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1ga1"]
+font_size = 40
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_v1bfj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+color = Color(0.0862745, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.481
+anchor_bottom = 0.508
+offset_left = 457.0
+offset_top = 203.0
+offset_right = 119.888
+offset_bottom = -71.184
+text = "Game Over"
+label_settings = SubResource("LabelSettings_m1ga1")
+
+[node name="Retry" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.094
+anchor_right = 0.09
+anchor_bottom = 0.094
+offset_left = 421.32
+offset_top = 203.088
+offset_right = 497.32
+offset_bottom = 251.088
+text = "Retry"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.094
+anchor_right = 0.09
+anchor_bottom = 0.094
+offset_left = 422.32
+offset_top = 263.088
+offset_right = 498.32
+offset_bottom = 311.088
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yw76t")
+autoplay = true
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccaj07sa7ma26"]
+
+[ext_resource type="Script" path="res://Player/basic_bolt.gd" id="1_gqyy0"]
+[ext_resource type="Texture2D" uid="uid://dk1hok3fqmuw8" path="res://Items/Bullets_explosions/All_Fire_Bullet_Pixel_16x16_02.png" id="2_wbrvj"]
+[ext_resource type="AudioStream" uid="uid://ck4d4l6okn2mp" path="res://sounds/gun-laser-single-shot-sci-fi-102814.mp3" id="3_frp58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb7lh"]
+atlas = ExtResource("2_wbrvj")
+region = Rect2(256, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0xhg"]
+atlas = ExtResource("2_wbrvj")
+region = Rect2(272, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcqep"]
+atlas = ExtResource("2_wbrvj")
+region = Rect2(288, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8h2w"]
+atlas = ExtResource("2_wbrvj")
+region = Rect2(304, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2soa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb7lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0xhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcqep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8h2w")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gy8m1"]
+radius = 7.0
+height = 26.0
+
+[node name="Basic_bolt_0" type="Area2D"]
+light_mask = 3
+visibility_layer = 3
+collision_layer = 254
+collision_mask = 254
+script = ExtResource("1_gqyy0")
+
+[node name="basic" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.19209e-07, -2.27374e-13)
+rotation = -1.5708
+scale = Vector2(1.69528, 1.87737)
+sprite_frames = SubResource("SpriteFrames_o2soa")
+animation = &"blue"
+autoplay = "blue"
+frame_progress = 0.417589
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CapsuleShape2D_gy8m1")
+debug_color = Color(0.192157, 0.466667, 0, 0.729412)
+
+[node name="shoot_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_frp58")
+volume_db = -11.921
+pitch_scale = 0.69
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

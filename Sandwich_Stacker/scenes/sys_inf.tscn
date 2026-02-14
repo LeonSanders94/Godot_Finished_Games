@@ -1,0 +1,141 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccptwk3c7dlg4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_shbki"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_ikq3b"]
+font_size = 10
+
+[node name="sys_inf" type="HBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -284.0
+offset_right = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="bkg2" type="Panel" parent="."]
+modulate = Color(0, 1, 1, 1)
+custom_minimum_size = Vector2(333, 0)
+layout_mode = 2
+
+[node name="dbg_mnu" type="Label" parent="bkg2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.5
+offset_right = 150.5
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+text = "Program Information and Debug Menu"
+horizontal_alignment = 1
+
+[node name="bkg" type="Panel" parent="."]
+modulate = Color(0, 1, 1, 1)
+custom_minimum_size = Vector2(333, 0)
+layout_mode = 2
+
+[node name="mcp_var" type="Label" parent="bkg"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.5
+offset_right = 131.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Master Control Program Variables
+"
+horizontal_alignment = 1
+
+[node name="dbg_placeholder_Menu" type="Label" parent="bkg/mcp_var"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.12
+anchor_top = 0.56700003
+anchor_right = 1.067
+anchor_bottom = 28.144
+offset_left = 1.06
+offset_top = 0.02299881
+offset_right = -0.1210022
+offset_bottom = 56.688
+grow_horizontal = 2
+grow_vertical = 2
+text = "Session Time = Timer started when the game is initialized 00:00:00:00
+Game Time = Timer that starts when round one begins is 00:00:00:00 only moves when the game is unpaused.
+Plyr_X_Cord = Player's Position within a range if greater or Less than the minimums display ERROR 
+Highscore = Loaded highscore on the saved profile
+HIGHSCORE: = 0
+LVL_SEL= (LvA,LvB,LvC,LvD,LvE,LvF)
+LVL_COM = ()#List of levels the player has completed. 
+DIF= (1,2,3)
+PLYR_CLR= (Red, Blue, Pink, Green, White, Black, Purple, Orange, Teal)
+Gme_on:Bool
+RND= 1
+
+STM = RNL* Dif 
+STC = 0 #Current Toppings on Sandwich
+
+HSCR =+ SCR # this will need a function to trigger this. 
+SCR = (STC+TP*(Round * 0.1))
+TP = #Topping Type on sandwich VEGI,MEAT,COND
+PNT = 1
+VEGI = PNT
+MEAT = PNT * 2
+COND = PNT * (#Percentage of condiment on sandwich)
+Stage Zoom #used for moving the screen out when the sandwich stacks higher. Something like  STZ (Stage Zoom) = STC
+
+Base Voxel Size BVS = 4x4
+
+Toppings Library #For controlling the toppings characteristics 
+	Meat
+	Veg
+	Cond
+
+Topping spawn Rate TSR = 1
+
+Topping spawn Modifier TSM = 1 every 2 rounds
+Round Limit RNL =  1
+"
+label_settings = SubResource("LabelSettings_shbki")
+autowrap_mode = 3
+
+[node name="bkg3" type="Panel" parent="."]
+modulate = Color(0, 1, 1, 1)
+custom_minimum_size = Vector2(333, 0)
+layout_mode = 2
+
+[node name="err_log" type="Label" parent="bkg3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.5
+offset_right = 131.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Error Log
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="err_placholder" type="Label" parent="bkg3/err_log"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.087
+anchor_right = 1.0
+anchor_bottom = 6.217
+offset_left = 1.0
+offset_top = -0.000999451
+offset_right = -20.0
+offset_bottom = 0.00898743
+text = "ERROR LIST PLACEHOLDER"
+label_settings = SubResource("LabelSettings_ikq3b")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true

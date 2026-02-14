@@ -1,0 +1,325 @@
+[gd_scene load_steps=21 format=3 uid="uid://bw7b6yvuc6q0i"]
+
+[ext_resource type="Script" uid="uid://cq7i46se842rm" path="res://scenes/debug_test.gd" id="1_ac7lm"]
+[ext_resource type="PackedScene" uid="uid://ceq4ydqjklv85" path="res://scenes/platform.tscn" id="1_bb3yq"]
+[ext_resource type="Script" uid="uid://5py316w4wfha" path="res://scenes/spawners.gd" id="4_sa7ls"]
+[ext_resource type="Texture2D" uid="uid://87xk3yr74m5u" path="res://assets/diner_int.png" id="4_ski4u"]
+[ext_resource type="LabelSettings" uid="uid://c7ba4xdsbqkbk" path="res://scenes/UI_settings.tres" id="5_ski4u"]
+[ext_resource type="PackedScene" uid="uid://c2pkwwvwsv317" path="res://scenes/meat_1.tscn" id="5_xehmw"]
+[ext_resource type="Script" uid="uid://0kevc4qyeyh1" path="res://scenes/score.gd" id="6_sa7ls"]
+[ext_resource type="Texture2D" uid="uid://7022o0fttej4" path="res://assets/pipes_tileset.png" id="7_atdim"]
+[ext_resource type="Script" uid="uid://cb5ovo6oq4kt4" path="res://scenes/total_score_2.gd" id="8_m7hu8"]
+[ext_resource type="Script" uid="uid://cryt6wuyjelox" path="res://scenes/level.gd" id="10_54lcg"]
+[ext_resource type="Script" uid="uid://bd5uh826gpbuh" path="res://scenes/drops_left.gd" id="11_3dhtp"]
+[ext_resource type="FontFile" uid="uid://dy36odq4epfsc" path="res://assets/fonts/Kamikaze-Italic.ttf" id="11_adcvk"]
+[ext_resource type="Script" uid="uid://cbiarvy7vnsg5" path="res://scenes/label.gd" id="11_urpsh"]
+[ext_resource type="FontFile" uid="uid://e4u7qyx1fpl5" path="res://assets/fonts/Ethnocentric Rg.otf" id="12_cjft2"]
+[ext_resource type="Script" uid="uid://qgm11utcdbkq" path="res://scenes/you_win.gd" id="12_urpsh"]
+[ext_resource type="Script" uid="uid://bkald12c2q12j" path="res://scenes/stack_bonus.gd" id="13_1guy3"]
+[ext_resource type="Script" uid="uid://cxrki5l1dubob" path="res://scenes/game_over.gd" id="15_21ot7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rrrmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb3yq"]
+size = Vector2(1151, 123)
+
+[sub_resource type="LabelSettings" id="LabelSettings_urpsh"]
+font = ExtResource("11_adcvk")
+font_size = 128
+font_color = Color(0.91, 0.4246667, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0.8149562, 0.67683077, 1)
+
+[node name="debug_test" type="Node"]
+script = ExtResource("1_ac7lm")
+
+[node name="DinerInt" type="Sprite2D" parent="."]
+self_modulate = Color(0.56, 0.5152, 0.55626667, 0.9843137)
+position = Vector2(568, 560)
+scale = Vector2(2.255, 2.7749999)
+texture = ExtResource("4_ski4u")
+
+[node name="FoodDropper" type="Polygon2D" parent="DinerInt"]
+position = Vector2(3.5476837, -155.67567)
+scale = Vector2(0.8126577, 0.43028095)
+color = Color(0.11372549, 0.11764706, 0.1882353, 1)
+polygon = PackedVector2Array(364.52072, -201.00003, 360.15518, 93.80001, -377.61728, 93.80001, -377.61728, -201.00003)
+
+[node name="Line2D" type="Line2D" parent="DinerInt"]
+position = Vector2(0, -7.7188945)
+scale = Vector2(1, 0.9243245)
+points = PackedVector2Array(-301.552, -117, 294.457, -117)
+default_color = Color(0.0564, 0.0564, 0.12, 1)
+
+[node name="Spawners" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource("4_sa7ls")
+meat = ExtResource("5_xehmw")
+
+[node name="spawn_1" type="Marker2D" parent="Spawners"]
+position = Vector2(96, -32)
+
+[node name="spawn_2" type="Marker2D" parent="Spawners"]
+position = Vector2(424, -32)
+
+[node name="spawn_3" type="Marker2D" parent="Spawners"]
+position = Vector2(736, -24)
+
+[node name="spawn_4" type="Marker2D" parent="Spawners"]
+position = Vector2(1064, -24)
+
+[node name="PipesTileset" type="Sprite2D" parent="Spawners"]
+self_modulate = Color(0.25205073, 0.3986336, 0, 1)
+position = Vector2(576, 151.99997)
+scale = Vector2(6, 4.499999)
+texture = ExtResource("7_atdim")
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(311.50006, 666)
+rotation = 1.5707964
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_rrrmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-281.99997, 375.50006)
+shape = SubResource("RectangleShape2D_bb3yq")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(311.50006, 666)
+rotation = 1.5707964
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_rrrmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-149.00005, -877)
+shape = SubResource("RectangleShape2D_bb3yq")
+
+[node name="Player_platform" parent="." instance=ExtResource("1_bb3yq")]
+position = Vector2(180.50006, 661)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="game_info" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="score" type="Label" parent="UI/game_info"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -728.0
+offset_top = -34.5
+offset_right = -437.0
+offset_bottom = 35.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Current Score: 0"
+label_settings = ExtResource("5_ski4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("6_sa7ls")
+
+[node name="total_score2" type="Label" parent="UI/game_info"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -560.0
+offset_right = -269.0
+offset_bottom = 70.0
+grow_horizontal = 2
+text = "Current Score: 0"
+label_settings = ExtResource("5_ski4u")
+horizontal_alignment = 1
+uppercase = true
+script = ExtResource("8_m7hu8")
+
+[node name="Stack_bonus" type="Label" parent="UI/game_info"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -22.5
+offset_right = -48.0
+offset_bottom = 22.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Stack Bonus: 0"
+label_settings = ExtResource("5_ski4u")
+horizontal_alignment = 2
+script = ExtResource("13_1guy3")
+
+[node name="You_Win" type="Label" parent="UI/game_info"]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -444.0
+offset_right = -8.0
+offset_bottom = -385.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU WIN"
+label_settings = SubResource("LabelSettings_urpsh")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("12_urpsh")
+
+[node name="Endless" type="Button" parent="UI/game_info/You_Win"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 195.0
+offset_right = 129.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_cjft2")
+theme_override_font_sizes/font_size = 32
+text = "Endless?"
+
+[node name="Main Menu" type="Button" parent="UI/game_info/You_Win"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = 93.5
+offset_right = 136.5
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_cjft2")
+theme_override_font_sizes/font_size = 32
+text = "Exit Game"
+
+[node name="Game_Over" type="Label" parent="UI"]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_urpsh")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("15_21ot7")
+
+[node name="Main Menu" type="Button" parent="UI/Game_Over"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = 93.5
+offset_right = 136.5
+offset_bottom = 141.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_cjft2")
+theme_override_font_sizes/font_size = 32
+text = "Exit Game"
+
+[node name="Panel" type="Panel" parent="UI"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 88.0
+
+[node name="Level" type="Label" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_right = 291.0
+offset_bottom = 35.0
+grow_vertical = 2
+text = "Level: 0"
+label_settings = ExtResource("5_ski4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("10_54lcg")
+
+[node name="drops_Left" type="Label" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -36.0
+offset_bottom = 44.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Drops Left: X X X"
+label_settings = ExtResource("5_ski4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_3dhtp")
+
+[node name="Goal" type="Label" parent="UI/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -44.0
+offset_right = 133.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Total Score Goal: "
+label_settings = ExtResource("5_ski4u")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("11_urpsh")
+
+[connection signal="timeout" from="Spawners" to="Spawners" method="_on_timeout"]
+[connection signal="button_up" from="UI/game_info/You_Win/Endless" to="UI/game_info/You_Win" method="_on_endless_button_up"]
+[connection signal="button_up" from="UI/game_info/You_Win/Main Menu" to="UI/game_info/You_Win" method="_on_main_menu_button_up"]
+[connection signal="button_up" from="UI/Game_Over/Main Menu" to="UI/Game_Over" method="_on_main_menu_button_up"]

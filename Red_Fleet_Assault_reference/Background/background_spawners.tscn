@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl7h17lqpf3ro"]
+
+[ext_resource type="Script" path="res://planet_spawn_1.gd" id="1_c4tsr"]
+[ext_resource type="PackedScene" uid="uid://b278x1lv47xyb" path="res://Background/planets_body.tscn" id="2_pphhf"]
+
+[node name="Background_spawners" type="Node2D"]
+position = Vector2(8, 216)
+script = ExtResource("1_c4tsr")
+planets = ExtResource("2_pphhf")
+
+[node name="PlanetSpawn_1" type="Marker2D" parent="."]
+position = Vector2(170, 26)
+
+[node name="Planetspawn_2" type="Marker2D" parent="."]
+position = Vector2(498, 26)
+
+[node name="Planetspaen_3" type="Marker2D" parent="."]
+position = Vector2(906, 26)
+
+[node name="new_item" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="timeout" from="new_item" to="." method="_on_new_item_timeout"]

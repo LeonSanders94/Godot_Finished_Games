@@ -1,0 +1,126 @@
+[gd_scene load_steps=15 format=3 uid="uid://nvvpkkvfa44v"]
+
+[ext_resource type="Texture2D" uid="uid://crl2rmflxuqma" path="res://Enemies/CIGAR_BOT.png" id="1_7c2ob"]
+[ext_resource type="Script" path="res://Enemies/cigar_bot.gd" id="1_cg5ex"]
+[ext_resource type="Texture2D" uid="uid://dnyw47mrlmhwt" path="res://Items/Bullets_explosions/Yellow Effect Bullet Impact Explosion 32x32.png" id="3_yj20n"]
+[ext_resource type="AudioStream" uid="uid://bnhv3sb6xbp3e" path="res://sounds/explosion-9-340460.mp3" id="4_qp5b5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpdd1"]
+size = Vector2(29, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3oat"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(512, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsfyu"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nevjv"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0hia"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(544, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wph28"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(256, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1qvo"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(576, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ycbh"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(288, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfb87"]
+atlas = ExtResource("3_yj20n")
+region = Rect2(608, 384, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wl2yv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3oat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsfyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nevjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0hia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wph28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1qvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ycbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfb87")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 10.0
+}]
+
+[node name="cigar_bot" type="CharacterBody2D" groups=["Redfleetgroup"]]
+collision_layer = 16
+collision_mask = 16
+motion_mode = 1
+script = ExtResource("1_cg5ex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_fpdd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 7)
+scale = Vector2(1.90625, 2.26705)
+texture = ExtResource("1_7c2ob")
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_wl2yv")
+animation = &"explode"
+
+[node name="ShootMarker" type="Marker2D" parent="."]
+rotation = 3.14159
+
+[node name="ShootMarker2" type="Marker2D" parent="."]
+position = Vector2(0, -42)
+
+[node name="ShootMarker3" type="Marker2D" parent="."]
+position = Vector2(1, 56)
+
+[node name="ray_facing_right" type="RayCast2D" parent="."]
+light_mask = 28
+visibility_layer = 28
+target_position = Vector2(-210, 0)
+collision_mask = 8
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="ray_facing_left" type="RayCast2D" parent="."]
+light_mask = 28
+visibility_layer = 28
+target_position = Vector2(178, 0)
+collision_mask = 8
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qp5b5")
+volume_db = -9.717
+pitch_scale = 0.5
+bus = &"Enemy FX"

@@ -1,0 +1,219 @@
+[gd_scene load_steps=11 format=3 uid="uid://twwxaujqjkgh"]
+
+[ext_resource type="FontFile" uid="uid://b7nx6w8c3wcjf" path="res://UI/Fonts/Ethnocentric Rg.otf" id="1_yrvxw"]
+[ext_resource type="Script" path="res://Items/atributes_text.gd" id="2_06077"]
+[ext_resource type="Script" path="res://Levels/game_stats_body.gd" id="3_6sb8h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8a21"]
+bg_color = Color(0.2838, 0.34142, 0.86, 0.364706)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.2831, 0.340278, 0.861622, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_wy37h"]
+font = ExtResource("1_yrvxw")
+font_size = 44
+font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+outline_size = 3
+outline_color = Color(44.149, 100.02, 0.0666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rimls"]
+font_size = 32
+outline_size = 3
+outline_color = Color(44.149, 100, 0.0627451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eeupi"]
+font_size = 18
+font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+outline_size = 3
+outline_color = Color(44.149, 100.02, 0.0666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf6uq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2tbn"]
+font_size = 32
+font_color = Color(0.827451, 0.32549, 1, 1)
+outline_size = 3
+outline_color = Color(44.149, 100, 0.0666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_63nog"]
+font_size = 18
+font_color = Color(0.827451, 0.0784314, 1, 1)
+outline_size = 3
+outline_color = Color(44.149, 100, 0.0666667, 1)
+
+[node name="You_Win!" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="victory_pane" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.5
+offset_top = -279.5
+offset_right = 360.5
+offset_bottom = 279.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y8a21")
+
+[node name="Win!" type="Label" parent="victory_pane"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.246
+anchor_top = 0.065
+anchor_right = 0.729
+anchor_bottom = 0.151
+offset_left = 6.65199
+offset_top = -0.0500031
+offset_right = -0.202026
+offset_bottom = -0.0700073
+text = "YOU WIN!"
+label_settings = SubResource("LabelSettings_wy37h")
+horizontal_alignment = 1
+
+[node name="Endless" type="Button" parent="victory_pane"]
+layout_mode = 0
+offset_left = 268.5
+offset_top = 167.5
+offset_right = 458.5
+offset_bottom = 219.5
+text = "ENDLESS"
+
+[node name="Main Menu" type="Button" parent="victory_pane"]
+layout_mode = 0
+offset_left = 268.5
+offset_top = 235.5
+offset_right = 458.5
+offset_bottom = 287.5
+text = "Main Menu"
+
+[node name="Restart" type="Button" parent="victory_pane"]
+layout_mode = 0
+offset_left = 268.5
+offset_top = 300.5
+offset_right = 458.5
+offset_bottom = 352.5
+text = "New Run"
+
+[node name="Exit Game" type="Button" parent="victory_pane"]
+layout_mode = 0
+offset_left = 268.5
+offset_top = 368.5
+offset_right = 458.5
+offset_bottom = 420.5
+text = "Exit Game"
+
+[node name="Attribute Box" type="Panel" parent="victory_pane"]
+modulate = Color(0.827451, 0.32549, 1, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -189.5
+offset_right = 105.0
+offset_bottom = 253.5
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -6.28319
+scale = Vector2(0.627791, 0.876738)
+
+[node name="Label" type="Label" parent="victory_pane/Attribute Box"]
+layout_mode = 0
+offset_left = 68.4941
+offset_top = -2.28882e-05
+offset_right = 224.494
+offset_bottom = 45.0
+scale = Vector2(1.09139, 0.684137)
+text = "Attributes"
+label_settings = SubResource("LabelSettings_rimls")
+
+[node name="Atributes_text" type="Label" parent="victory_pane/Attribute Box"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -347.7
+offset_top = -179.298
+offset_right = -149.7
+offset_bottom = 165.702
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -6.28319
+scale = Vector2(1.51926, 1.12648)
+text = "Health: 0
+Armor: 0 
+Shield: 0
+Speed: 0
+Damage: 0 
+Fire Rat: 0 
+RoboMechanic: 0
+Maneuvering: 0 
+Robo AI Integrations: 0
+LifeSteal: 0
+Repair Kits: 0 
+Cash:0
+"
+label_settings = SubResource("LabelSettings_eeupi")
+script = ExtResource("2_06077")
+
+[node name="Panel" type="Panel" parent="victory_pane"]
+modulate = Color(0.827451, 0.32549, 1, 1)
+layout_mode = 0
+offset_left = 261.5
+offset_top = 500.5
+offset_right = 277.5
+offset_bottom = 566.5
+scale = Vector2(-13.9979, -6.28781)
+theme_override_styles/panel = SubResource("StyleBoxFlat_sf6uq")
+
+[node name="Game_Stats_header" type="Label" parent="victory_pane/Panel"]
+layout_mode = 0
+offset_left = 13.544
+offset_top = 66.1265
+offset_right = 189.544
+offset_bottom = 111.126
+rotation = -3.14159
+scale = Vector2(0.0648501, 0.120624)
+text = "Game Stats"
+label_settings = SubResource("LabelSettings_f2tbn")
+
+[node name="Game_Stats_Body" type="Label" parent="victory_pane/Panel"]
+layout_mode = 0
+offset_left = 15.2166
+offset_top = 58.2079
+offset_right = 250.217
+offset_bottom = 359.208
+rotation = 3.14159
+scale = Vector2(0.0630324, 0.178965)
+text = "Total kills : 0
+Fighter kills : 0
+Bomber kills : 0
+Carrier kills : 0
+Total hits : 0
+Total shots : 0
+Damage taken : 0
+Damage dealt : 0
+Total Money Collected : 0"
+label_settings = SubResource("LabelSettings_63nog")
+script = ExtResource("3_6sb8h")

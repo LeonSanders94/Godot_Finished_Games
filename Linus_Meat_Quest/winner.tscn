@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://b07lmnhp8cvax"]
+
+[ext_resource type="Texture2D" uid="uid://b80jn6sw6kymu" path="res://Items/You_Win.png" id="2_yt8yi"]
+[ext_resource type="AudioStream" uid="uid://cm7syiddtjjj" path="res://audio/spin-complete-295086.mp3" id="3_4gwn6"]
+[ext_resource type="Script" path="res://Player/texture_rect.gd" id="3_bb68k"]
+
+[node name="Winner" type="CanvasLayer"]
+script = ExtResource("3_bb68k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -2.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yt8yi")
+expand_mode = 1
+
+[node name="retry" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.094
+anchor_right = 0.09
+anchor_bottom = 0.094
+offset_left = 259.32
+offset_top = 378.088
+offset_right = 335.32
+offset_bottom = 426.088
+text = "Retry"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.09
+anchor_top = 0.094
+anchor_right = 0.09
+anchor_bottom = 0.094
+offset_left = 571.32
+offset_top = 377.088
+offset_right = 647.32
+offset_bottom = 425.088
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4gwn6")
+autoplay = true
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://cemjqxwp2xc0m"]
+
+[ext_resource type="Script" path="res://Enemies/advanced_fighter.gd" id="1_bf6e8"]
+[ext_resource type="Texture2D" uid="uid://nbtx0ns841ys" path="res://Enemies/tiny_ship10.png" id="2_wjp5e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjtwh"]
+atlas = ExtResource("2_wjp5e")
+region = Rect2(0, 0, 80, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_viu3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjtwh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekpf6"]
+size = Vector2(25.8973, 54.275)
+
+[node name="Advanced_Fighter" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_bf6e8")
+
+[node name="Advanced Fighter" type="AnimatedSprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(0.649551, 0.591367)
+sprite_frames = SubResource("SpriteFrames_viu3f")
+frame_progress = 0.277406
+
+[node name="advanced_1_zone" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(3.74317e-05, 1.28967)
+rotation = -3.14159
+scale = Vector2(0.617825, 0.542066)
+shape = SubResource("RectangleShape2D_ekpf6")
+debug_color = Color(0.610611, 0.536833, 0.123806, 0.42)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 16)
+rotation = -3.14159
+
+[node name="Right" type="RayCast2D" parent="."]
+target_position = Vector2(56, 0)
+
+[node name="Left" type="RayCast2D" parent="."]
+target_position = Vector2(-56, 0)
+
+[node name="Up" type="RayCast2D" parent="."]
+target_position = Vector2(0, -32)
+
+[node name="Down" type="RayCast2D" parent="."]
+target_position = Vector2(0, 32)

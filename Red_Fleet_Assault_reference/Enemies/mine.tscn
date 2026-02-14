@@ -1,0 +1,156 @@
+[gd_scene load_steps=19 format=3 uid="uid://bc62t2a0y8o5u"]
+
+[ext_resource type="Script" path="res://Enemies/mine.gd" id="1_mh0tw"]
+[ext_resource type="Texture2D" uid="uid://drcf15r7ktk68" path="res://Enemies/Mine.png" id="1_t75t5"]
+[ext_resource type="Texture2D" uid="uid://dnyw47mrlmhwt" path="res://Items/Bullets_explosions/Yellow Effect Bullet Impact Explosion 32x32.png" id="2_owhuo"]
+[ext_resource type="AudioStream" uid="uid://bnhv3sb6xbp3e" path="res://sounds/explosion-9-340460.mp3" id="4_hq2vj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trluh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0.072, 0.072, 1)
+border_blend = true
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ujpq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63hod"]
+radius = 94.0053
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghj0v"]
+bg_color = Color(0.79, 0.0553, 0.0553, 0.0431373)
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.89, 0.48861, 0.1602, 0.207843)
+border_blend = true
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3oat"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(512, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsfyu"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nevjv"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0hia"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(544, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wph28"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(256, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1qvo"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(576, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ycbh"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(288, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfb87"]
+atlas = ExtResource("2_owhuo")
+region = Rect2(608, 384, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdl1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3oat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsfyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nevjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0hia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wph28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1qvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ycbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfb87")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c23vj"]
+radius = 24.0
+
+[node name="mine" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("1_mh0tw")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_trluh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(1.19231, 0.909091)
+texture = ExtResource("1_t75t5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_6ujpq")
+
+[node name="player_chaser" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_chaser"]
+shape = SubResource("CircleShape2D_63hod")
+debug_color = Color(0.83707, 0.302131, 0.618776, 0.42)
+
+[node name="Panel" type="Panel" parent="player_chaser/CollisionShape2D"]
+offset_left = -95.0
+offset_top = -94.0
+offset_right = 94.0
+offset_bottom = 94.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ghj0v")
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_vdl1i")
+animation = &"explode"
+
+[node name="hurt area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt area"]
+shape = SubResource("CircleShape2D_c23vj")
+debug_color = Color(0.156887, 0.644793, 3.85046e-07, 0.42)
+
+[node name="AudioListener2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hq2vj")
+volume_db = -9.717
+
+[connection signal="body_entered" from="player_chaser" to="." method="_on_player_chaser_body_entered"]
+[connection signal="body_entered" from="hurt area" to="." method="_on_hurt_area_body_entered"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://kvcl4g1ek5ll"]
+
+[ext_resource type="Script" path="res://Enemies/fghtr_1_bod.gd" id="1_26pqo"]
+[ext_resource type="Texture2D" uid="uid://dugk7pkanovru" path="res://Enemies/tiny_ship7.png" id="1_dswd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvi0j"]
+atlas = ExtResource("1_dswd5")
+region = Rect2(0, 0, 80, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owri8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvi0j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_su263"]
+a = Vector2(38.846, -5.00011)
+b = Vector2(-38.8459, -4.99989)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23rxm"]
+size = Vector2(48, 10)
+
+[node name="fghtr_1_bod" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_26pqo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(0.649551, 0.591367)
+sprite_frames = SubResource("SpriteFrames_owri8")
+
+[node name="fghtr_1_zone" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(2.69572e-05, -2.71033)
+rotation = -3.14159
+scale = Vector2(0.617825, 0.542066)
+shape = SubResource("SegmentShape2D_su263")
+debug_color = Color(0.610611, 0.536833, 0.123806, 0.42)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 16)
+rotation = -3.14159
+
+[node name="Right_cast" type="RayCast2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(24, 0)
+target_position = Vector2(48, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Left_cast" type="RayCast2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-24, 0)
+target_position = Vector2(-56, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="butt_protection" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_23rxm")
+debug_color = Color(0.233559, 0.524608, 0.949599, 0.42)
+
+[connection signal="item_rect_changed" from="Right_cast" to="." method="_on_right_cast_item_rect_changed"]
+[connection signal="item_rect_changed" from="Left_cast" to="." method="_on_left_cast_item_rect_changed"]

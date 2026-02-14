@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlvs83f8avmpm"]
+
+[ext_resource type="Script" path="res://addons/parallax_node/parallax_node.gd" id="1_1oerc"]
+[ext_resource type="Texture2D" uid="uid://dmj5ehprim8g" path="res://Background/New_bg/new-space-backgound.png" id="2_5smb0"]
+[ext_resource type="Texture2D" uid="uid://b0j1gci0517g6" path="res://Background/New_bg/new_stars.png" id="3_2hl80"]
+
+[node name="BG" type="ParallaxBackground"]
+layer = -1
+scroll_ignore_camera_zoom = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_top = -7.0
+offset_right = 292.0
+offset_bottom = -7.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment_horizontal = 0
+alignment_vertical = 2
+
+[node name="ParallaxNode" type="Node2D" parent="AspectRatioContainer"]
+position = Vector2(0, 431)
+script = ExtResource("1_1oerc")
+
+[node name="Blank background" type="Sprite2D" parent="AspectRatioContainer/ParallaxNode"]
+show_behind_parent = true
+position = Vector2(1709.45, -1891.12)
+rotation = 3.14159
+scale = Vector2(9.14335, -21.2433)
+texture = ExtResource("2_5smb0")
+centered = false
+
+[node name="AnimatedSprite2D" type="TextureRect" parent="AspectRatioContainer/ParallaxNode/Blank background"]
+offset_left = 272.0
+offset_top = 130.0
+offset_right = 1240.0
+offset_bottom = 826.0
+scale = Vector2(-0.281086, -0.115022)
+size_flags_horizontal = 4
+texture = ExtResource("3_2hl80")
+stretch_mode = 1

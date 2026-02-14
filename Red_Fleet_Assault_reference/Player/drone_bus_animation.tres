@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://c0bc5p4i3sjk4"]
+
+[ext_resource type="Texture2D" uid="uid://dfgg6ko7jg3mr" path="res://Player/Drone_Bus.png" id="1_0y0fv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x4ll"]
+atlas = ExtResource("1_0y0fv")
+region = Rect2(0, 0, 73, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x4ll")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

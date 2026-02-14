@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://bw7b6yvuc6q0i"]
+
+[ext_resource type="Script" uid="uid://cq7i46se842rm" path="res://scenes/debug_test.gd" id="1_ac7lm"]
+[ext_resource type="PackedScene" uid="uid://ceq4ydqjklv85" path="res://scenes/platform.tscn" id="1_bb3yq"]
+[ext_resource type="PackedScene" uid="uid://c2pkwwvwsv317" path="res://scenes/meat_1.tscn" id="4_vbm4d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rrrmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb3yq"]
+size = Vector2(1151, 123)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1focx"]
+
+[node name="debug_test" type="Node2D"]
+script = ExtResource("1_ac7lm")
+
+[node name="Background" type="Polygon2D" parent="."]
+position = Vector2(-96, -15.999999)
+scale = Vector2(1304.1737, 430.4458)
+color = Color(0, 0.014835096, 0.06140693, 1)
+polygon = PackedVector2Array(1.0481561, 0.018327607, 1.1896998, 0.7597097, 1.0547485, 1.4845395, -0.00086767896, 1.4776633, -0.116874546, 0.72253895, 0, -0.0022909509)
+
+[node name="ground" type="StaticBody2D" parent="."]
+position = Vector2(575.5, 606.5)
+physics_material_override = SubResource("PhysicsMaterial_rrrmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground"]
+position = Vector2(-1, -20)
+shape = SubResource("RectangleShape2D_bb3yq")
+
+[node name="Sprite2D" type="Sprite2D" parent="ground"]
+position = Vector2(0.5000541, -20.5)
+scale = Vector2(1154, 122)
+texture = SubResource("CanvasTexture_1focx")
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(331, 413)
+rotation = 1.5707964
+physics_material_override = SubResource("PhysicsMaterial_rrrmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-204.99998, 379)
+shape = SubResource("RectangleShape2D_bb3yq")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(331, 413)
+rotation = 1.5707964
+physics_material_override = SubResource("PhysicsMaterial_rrrmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-149.00005, -877)
+shape = SubResource("RectangleShape2D_bb3yq")
+
+[node name="Player_platform" parent="." instance=ExtResource("1_bb3yq")]
+position = Vector2(304, 454)
+
+[node name="meat_1" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(315, 129)
+
+[node name="meat_2" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(461, -54)
+
+[node name="meat_3" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(712, -286)
+
+[node name="meat_4" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(339, -359)
+
+[node name="meat_5" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(849, -462)
+
+[node name="meat_6" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(427, -522)
+
+[node name="meat_7" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(631, -408)
+
+[node name="meat_8" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(256, -601)

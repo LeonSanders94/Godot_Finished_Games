@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnaf4e4gvapqe"]
+
+[ext_resource type="Script" uid="uid://ut7hvbux7s8y" path="res://scenes/area_2d.gd" id="1_7luj6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rghfm"]
+size = Vector2(192, 17)
+
+[node name="Food_catcher" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_7luj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, 0.5)
+shape = SubResource("RectangleShape2D_rghfm")
+debug_color = Color(2.1658838e-07, 0.65155184, 0.017984344, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,232 @@
+[gd_scene load_steps=25 format=3 uid="uid://jsx1rrm5ppme"]
+
+[ext_resource type="Script" path="res://Enemies/Boss/carrier.gd" id="1_i6ys8"]
+[ext_resource type="Texture2D" uid="uid://diinpekgklw3e" path="res://Enemies/Boss/Carrier1-sheet.png" id="1_io0ux"]
+[ext_resource type="Script" path="res://Levels/carrier_path_left.gd" id="1_riqqc"]
+[ext_resource type="Texture2D" uid="uid://b3ixareo8h22o" path="res://Enemies/Boss/carrier_gun-sheet.png" id="3_g0i02"]
+[ext_resource type="Script" path="res://Enemies/Boss/top_r_gun.gd" id="4_o122j"]
+[ext_resource type="Script" path="res://Enemies/Boss/top_l_gun.gd" id="5_du26y"]
+[ext_resource type="Script" path="res://Enemies/Boss/bottom_r_gun.gd" id="6_8lg4v"]
+[ext_resource type="Script" path="res://Enemies/Boss/bottom_l_gun.gd" id="7_1bsma"]
+
+[sub_resource type="Curve2D" id="Curve2D_1nptb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -170.965, -82.0932, -49.383, -16.9868, 49.383, 16.9868, 633.931, -73.6734, 0, 0, 0, 0, 676.294, -27.3644, 45.5104, -9.7524, -45.5104, 9.7524, 676.294, 170.501, 0, 0, 0, 0, 161.887, 178.921, 47.9017, 1.92418, -47.9017, -1.92418, -166.426, 177.342, 0, 0, 0, 0, -236.779, 64.7273, -17.202, 23.7636, 17.202, -23.7636, -225.431, -27.3644, 0, 0, 0, 0, -170.965, -82.0932)
+}
+point_count = 9
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e461"]
+atlas = ExtResource("3_g0i02")
+region = Rect2(56, 0, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7bv1"]
+atlas = ExtResource("3_g0i02")
+region = Rect2(0, 0, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcm80"]
+atlas = ExtResource("3_g0i02")
+region = Rect2(168, 0, 56, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43le5"]
+atlas = ExtResource("3_g0i02")
+region = Rect2(112, 0, 56, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctgsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e461")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7bv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcm80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43le5")
+}],
+"loop": true,
+"name": &"turret",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv3qd"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(0, 0, 129, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbhvw"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(129, 0, 129, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3wod"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(258, 0, 129, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trg7y"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(387, 0, 129, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftvau"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(516, 0, 129, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2esaq"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(645, 0, 129, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld80i"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(774, 0, 129, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m65yk"]
+atlas = ExtResource("1_io0ux")
+region = Rect2(903, 0, 129, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cn4uh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv3qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbhvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3wod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trg7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftvau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2esaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld80i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m65yk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8eko7"]
+radius = 24.5752
+height = 103.819
+
+[node name="Carrier_path_L" type="Path2D"]
+position = Vector2(202, 412)
+scale = Vector2(1.32191, 1.90028)
+curve = SubResource("Curve2D_1nptb")
+
+[node name="Carrier_path_left" type="PathFollow2D" parent="."]
+position = Vector2(-140.213, -82.4106)
+rotation = 0.246111
+progress = 30.7803
+rotates = false
+script = ExtResource("1_riqqc")
+
+[node name="Carrier" type="CharacterBody2D" parent="Carrier_path_left"]
+position = Vector2(-79.7313, 23.1442)
+rotation = 1.309
+scale = Vector2(0.711565, 1.39741)
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_i6ys8")
+
+[node name="top_r_gun" type="AnimatedSprite2D" parent="Carrier_path_left/Carrier"]
+position = Vector2(38.1456, -23.296)
+rotation = 1.5708
+scale = Vector2(0.328444, 0.440121)
+sprite_frames = SubResource("SpriteFrames_ctgsp")
+animation = &"turret"
+frame_progress = 0.676976
+script = ExtResource("4_o122j")
+
+[node name="top_shot" type="Marker2D" parent="Carrier_path_left/Carrier/top_r_gun"]
+position = Vector2(-19.9848, -9.73591)
+rotation = -1.0472
+
+[node name="middle_shot" type="Marker2D" parent="Carrier_path_left/Carrier/top_r_gun"]
+position = Vector2(1.22477, -17.1277)
+
+[node name="bottom_shot" type="Marker2D" parent="Carrier_path_left/Carrier/top_r_gun"]
+position = Vector2(22.5231, -9.84145)
+rotation = 0.785397
+
+[node name="top_l_gun" type="AnimatedSprite2D" parent="Carrier_path_left/Carrier"]
+position = Vector2(-37.2196, -22.0834)
+rotation = -1.57079
+scale = Vector2(0.328444, 0.440121)
+sprite_frames = SubResource("SpriteFrames_ctgsp")
+animation = &"turret"
+frame_progress = 0.396247
+script = ExtResource("5_du26y")
+
+[node name="top_shot" type="Marker2D" parent="Carrier_path_left/Carrier/top_l_gun"]
+position = Vector2(-19.9848, -9.73591)
+rotation = -1.0472
+
+[node name="middle_shot" type="Marker2D" parent="Carrier_path_left/Carrier/top_l_gun"]
+position = Vector2(1.22477, -17.1277)
+
+[node name="bottom_shot" type="Marker2D" parent="Carrier_path_left/Carrier/top_l_gun"]
+position = Vector2(22.5231, -9.84145)
+rotation = 0.785397
+
+[node name="bottom_r_gun" type="AnimatedSprite2D" parent="Carrier_path_left/Carrier"]
+position = Vector2(38.8333, 21.6401)
+rotation = 1.5708
+scale = Vector2(0.328444, 0.440121)
+sprite_frames = SubResource("SpriteFrames_ctgsp")
+animation = &"turret"
+frame_progress = 0.396247
+script = ExtResource("6_8lg4v")
+
+[node name="top_shot" type="Marker2D" parent="Carrier_path_left/Carrier/bottom_r_gun"]
+position = Vector2(-19.9848, -9.73591)
+rotation = -1.0472
+
+[node name="middle_shot" type="Marker2D" parent="Carrier_path_left/Carrier/bottom_r_gun"]
+position = Vector2(1.22477, -17.1277)
+
+[node name="bottom_shot" type="Marker2D" parent="Carrier_path_left/Carrier/bottom_r_gun"]
+position = Vector2(22.5231, -9.84145)
+rotation = 0.785397
+
+[node name="bottom_l_gun" type="AnimatedSprite2D" parent="Carrier_path_left/Carrier"]
+position = Vector2(-38.1426, 24.1689)
+rotation = -1.5708
+scale = Vector2(0.328444, 0.440121)
+sprite_frames = SubResource("SpriteFrames_ctgsp")
+animation = &"turret"
+frame_progress = 0.0405942
+script = ExtResource("7_1bsma")
+
+[node name="top_shot" type="Marker2D" parent="Carrier_path_left/Carrier/bottom_l_gun"]
+position = Vector2(-19.9848, -9.73591)
+rotation = -1.0472
+
+[node name="middle_shot" type="Marker2D" parent="Carrier_path_left/Carrier/bottom_l_gun"]
+position = Vector2(1.22477, -17.1277)
+
+[node name="bottom_shot" type="Marker2D" parent="Carrier_path_left/Carrier/bottom_l_gun"]
+position = Vector2(22.5231, -9.84145)
+rotation = 0.785397
+
+[node name="carrier" type="AnimatedSprite2D" parent="Carrier_path_left/Carrier"]
+position = Vector2(-2.03156, -0.697972)
+rotation = -1.5708
+scale = Vector2(1.18751, 1.26924)
+sprite_frames = SubResource("SpriteFrames_cn4uh")
+autoplay = "default"
+frame_progress = 0.0131423
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carrier_path_left/Carrier"]
+position = Vector2(0.187248, -0.407353)
+shape = SubResource("CapsuleShape2D_8eko7")

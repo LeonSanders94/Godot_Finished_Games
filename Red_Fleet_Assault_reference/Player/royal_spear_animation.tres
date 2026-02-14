@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dqbetg0g5hhc5"]
+
+[ext_resource type="Texture2D" uid="uid://krhndmp5jq3n" path="res://Player/Royal_Spear.png" id="1_cvj1k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_580t6"]
+atlas = ExtResource("1_cvj1k")
+region = Rect2(0, 0, 73, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_580t6")
+}],
+"loop": true,
+"name": &"Royal_idle",
+"speed": 5.0
+}]

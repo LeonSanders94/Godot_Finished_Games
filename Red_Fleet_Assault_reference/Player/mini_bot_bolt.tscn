@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqc72niqnabcv"]
+
+[ext_resource type="Script" path="res://Player/mini_bot_bolt.gd" id="1_4r1g8"]
+[ext_resource type="Texture2D" uid="uid://bfqwco256j7y4" path="res://Items/Bullets_explosions/All_Fire_Bullet_Pixel_16x16_00.png" id="1_rsltw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkpor"]
+atlas = ExtResource("1_rsltw")
+region = Rect2(288, 145, 16, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ypy7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkpor")
+}],
+"loop": true,
+"name": &"Bolt",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_axtvi"]
+a = Vector2(0, -8)
+b = Vector2(0, 8)
+
+[node name="mini_bot_bolt" type="Area2D"]
+collision_layer = 254
+collision_mask = 254
+script = ExtResource("1_4r1g8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.55356e-08, 1.04173)
+rotation = -1.5708
+scale = Vector2(1.36585, 1)
+sprite_frames = SubResource("SpriteFrames_ypy7r")
+animation = &"Bolt"
+autoplay = "Bolt"
+frame_progress = 0.692687
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_axtvi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

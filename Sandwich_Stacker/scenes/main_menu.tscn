@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=3 uid="uid://b7xbwo34f2mqa"]
+
+[ext_resource type="Script" uid="uid://c8asuoykeroj" path="res://scenes/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Texture2D" uid="uid://blni58mhnqc54" path="res://assets/DYEMS_start_background.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://bu1ur6mhiopxk" path="res://assets/sandwichguy.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://xqwisdgaaqbo" path="res://assets/sammy_hand.png" id="3_bqqt6"]
+[ext_resource type="FontFile" uid="uid://dy36odq4epfsc" path="res://assets/fonts/Kamikaze-Italic.ttf" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://bg82rumoyqgfg" path="res://scenes/highscore.gd" id="6_rtw2f"]
+[ext_resource type="LabelSettings" uid="uid://c7ba4xdsbqkbk" path="res://scenes/UI_settings.tres" id="7_oa1go"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
+font = ExtResource("4_wu84c")
+font_size = 90
+font_color = Color(0.91, 0.4246667, 0, 1)
+outline_size = 6
+outline_color = Color(0, 0.8149562, 0.67683077, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font = ExtResource("4_wu84c")
+font_size = 64
+font_color = Color(0.91, 0.4246667, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0.8149562, 0.67683077, 1)
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ln24")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = -264.0
+offset_right = 1480.0
+offset_bottom = 896.0
+texture = ExtResource("1_l6cm7")
+expand_mode = 3
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sandwichguy" type="Sprite2D" parent="."]
+position = Vector2(768.00006, 592)
+scale = Vector2(0.20312503, 0.2359605)
+texture = ExtResource("2_ekxnf")
+
+[node name="SammyHand" type="Sprite2D" parent="Sandwichguy"]
+position = Vector2(1401.1403, -763.8522)
+scale = Vector2(5.851429, 5.7383976)
+texture = ExtResource("3_bqqt6")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 48.0
+offset_right = 1110.0
+offset_bottom = 173.0
+text = "The Sandwich stacker"
+label_settings = SubResource("LabelSettings_bqqt6")
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.097277775
+anchor_top = 0.024197523
+anchor_right = 1.1947223
+anchor_bottom = 1.0201975
+offset_left = 376.064
+offset_top = 322.22223
+offset_right = -832.32007
+offset_bottom = -464.40002
+theme_override_colors/font_color = Color(0.91, 0.4246667, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.8149562, 0.67683077, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 68
+text = "START"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.009000001
+anchor_right = 1.2850001
+anchor_bottom = 0.99600005
+offset_left = 264.0
+offset_top = 495.9
+offset_right = -936.32007
+offset_bottom = -275.06665
+theme_override_colors/font_color = Color(0.91, 0.4246667, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.8149562, 0.67683077, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 68
+text = "EXIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="Highscore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -322.0
+offset_right = 206.0
+offset_bottom = -270.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HIGHSCORE: 1000"
+label_settings = SubResource("LabelSettings_8ln24")
+script = ExtResource("6_rtw2f")
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.99600005
+offset_left = 144.0
+offset_top = 632.0
+offset_right = -601.0
+offset_bottom = -27.400024
+text = "Controls:
+Left: A or Left Arrow Key
+Right: D or Left Arrow Key
+Finish Sandwich: Spacebar
+Save Highscore and Exit: Q
+"
+label_settings = ExtResource("7_oa1go")
+
+[node name="Goal" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.99600005
+offset_left = 48.0
+offset_top = 184.0
+offset_right = -437.0
+offset_bottom = -571.4
+text = "finish Sandwiches for Points
+Avoid Rotten Food
+Drop 3 stacks and you're fired!"
+label_settings = ExtResource("7_oa1go")
+uppercase = true
+
+[connection signal="button_up" from="Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="Exit" to="." method="_on_exit_button_up"]

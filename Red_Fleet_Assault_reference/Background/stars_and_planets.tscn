@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://be3bg6k68ca4y"]
+
+[ext_resource type="Script" path="res://addons/parallax_node/parallax_node.gd" id="1_ss7ul"]
+[ext_resource type="Texture2D" uid="uid://b0j1gci0517g6" path="res://Background/New_bg/new_stars.png" id="2_epv1n"]
+
+[node name="ParallaxNode3" type="Node2D"]
+position = Vector2(0, 836)
+script = ExtResource("1_ss7ul")
+parallax_factor = Vector2(1, 0.875)
+position_as_offset = true
+
+[node name="stars_sprite" type="Sprite2D" parent="."]
+position = Vector2(14.198, 998.006)
+rotation = -1.5708
+scale = Vector2(5.65308, 7.0264)
+texture = ExtResource("2_epv1n")
+centered = false

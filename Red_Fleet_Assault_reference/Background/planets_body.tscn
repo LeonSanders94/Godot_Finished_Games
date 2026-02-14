@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b278x1lv47xyb"]
+
+[ext_resource type="Script" path="res://planets_body.gd" id="1_smgpn"]
+[ext_resource type="Texture2D" uid="uid://kmsi72e153n3" path="res://Background/New_bg/juip.png" id="2_8p3wv"]
+
+[node name="Planets_body" type="CharacterBody2D"]
+scale = Vector2(3.06878, 2.98915)
+script = ExtResource("1_smgpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.572549, 0.572549, 0.572549, 0.847059)
+texture = ExtResource("2_8p3wv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 16.385
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

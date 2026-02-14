@@ -1,0 +1,409 @@
+[gd_scene load_steps=16 format=3 uid="uid://c6vixcr61drkl"]
+
+[ext_resource type="Script" path="res://Items/atributes_text.gd" id="1_s8jgx"]
+[ext_resource type="Script" path="res://Items/shop/shop.gd" id="1_vbbpd"]
+[ext_resource type="StyleBox" uid="uid://brak6vt1r0qqk" path="res://Enemies/themes/new_style_box_flat.tres" id="2_3rwti"]
+[ext_resource type="Script" path="res://Items/shop/current_cash.gd" id="2_sq2hx"]
+[ext_resource type="FontFile" uid="uid://23gr8pmw4an4" path="res://UI/Fonts/bulletinV1.ttf" id="3_mnni4"]
+[ext_resource type="FontFile" uid="uid://b7nx6w8c3wcjf" path="res://UI/Fonts/Ethnocentric Rg.otf" id="4_ujnbo"]
+[ext_resource type="StyleBox" uid="uid://d4bwif7aw8x3b" path="res://Enemies/themes/shop_choice_norm.tres" id="6_og2hc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mke0q"]
+bg_color = Color(0.339518, 0.700187, 0.17948, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.729587, 0.794394, 0.989819, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_cufhj"]
+font = ExtResource("4_ujnbo")
+font_size = 32
+font_color = Color(1, 1, 0.0156863, 1)
+outline_size = 7
+outline_color = Color(0.760784, 0.00392157, 0.960784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohad4"]
+bg_color = Color(0.2288, 0.369893, 0.88, 0.772549)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 3.0
+expand_margin_right = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt0pr"]
+bg_color = Color(6.16074e-06, 0.723361, 0.697714, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.832363, 0.369769, 0.056831, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqsxq"]
+bg_color = Color(0.793218, 0.121149, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rl1as"]
+bg_color = Color(0.8, 0.8, 0.8, 0.305882)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.1218, 0.87, 0.1218, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_idob0"]
+font = ExtResource("3_mnni4")
+font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+outline_size = 3
+outline_color = Color(44.149, 100.02, 0.0666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t4ies"]
+font_size = 18
+font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+outline_size = 3
+outline_color = Color(44.149, 100.02, 0.0666667, 1)
+
+[node name="Shop" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vbbpd")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="shop_background" type="Panel" parent="Control"]
+modulate = Color(0.00258067, 0.212461, 0.827593, 0.913725)
+z_index = -1
+layout_mode = 0
+offset_left = 144.0
+offset_top = 280.0
+offset_right = 904.0
+offset_bottom = 728.0
+theme_override_styles/panel = ExtResource("2_3rwti")
+
+[node name="Current_cash" type="Label" parent="Control"]
+process_mode = 3
+layout_mode = 0
+offset_left = 192.0
+offset_top = 640.0
+offset_right = 384.0
+offset_bottom = 688.0
+scale = Vector2(0.52188, 0.668027)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mke0q")
+text = "Cash"
+label_settings = SubResource("LabelSettings_cufhj")
+horizontal_alignment = 1
+script = ExtResource("2_sq2hx")
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Next_Round" type="Button" parent="Buttons"]
+process_mode = 2
+layout_mode = 0
+offset_left = 684.0
+offset_top = 647.0
+offset_right = 884.0
+offset_bottom = 704.0
+scale = Vector2(0.669021, 0.860927)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohad4")
+text = "Next Round"
+
+[node name="Item_1" type="Button" parent="Buttons"]
+process_mode = 3
+layout_mode = 0
+offset_left = 256.0
+offset_top = 320.0
+offset_right = 384.0
+offset_bottom = 576.0
+tooltip_text = "This is a tooltip"
+theme_override_colors/font_hover_pressed_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_hover_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_colors/font_pressed_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_focus_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_mnni4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("6_og2hc")
+text = "None"
+autowrap_mode = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="cost_1" type="Label" parent="Buttons/Item_1"]
+layout_mode = 0
+offset_top = 264.0
+offset_right = 163.0
+offset_bottom = 353.0
+scale = Vector2(0.355657, 0.510301)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 44
+text = "Cost: "
+vertical_alignment = 1
+
+[node name="price_1" type="Label" parent="Buttons/Item_1"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 264.0
+offset_right = 229.0
+offset_bottom = 353.0
+scale = Vector2(0.377535, 0.514161)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 44
+text = "0"
+vertical_alignment = 1
+
+[node name="Item_2" type="Button" parent="Buttons"]
+process_mode = 3
+layout_mode = 0
+offset_left = 416.0
+offset_top = 320.0
+offset_right = 544.0
+offset_bottom = 576.0
+tooltip_text = "This is a Tool Tip"
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_mnni4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("6_og2hc")
+text = "None"
+autowrap_mode = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="cost_2" type="Label" parent="Buttons/Item_2"]
+layout_mode = 0
+offset_top = 264.0
+offset_right = 199.0
+offset_bottom = 353.0
+scale = Vector2(0.38705, 0.478799)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 44
+text = "Cost: "
+vertical_alignment = 1
+
+[node name="price_2" type="Label" parent="Buttons/Item_2"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 264.0
+offset_right = 235.0
+offset_bottom = 353.0
+scale = Vector2(0.401938, 0.497012)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 44
+text = "0"
+vertical_alignment = 1
+
+[node name="Item_3" type="Button" parent="Buttons"]
+process_mode = 3
+layout_mode = 0
+offset_left = 576.0
+offset_top = 320.0
+offset_right = 704.0
+offset_bottom = 576.0
+tooltip_text = "This is a Tool tip"
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_mnni4")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("6_og2hc")
+text = "None"
+autowrap_mode = 3
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="cost_3" type="Label" parent="Buttons/Item_3"]
+layout_mode = 0
+offset_top = 264.0
+offset_right = 163.0
+offset_bottom = 353.0
+scale = Vector2(0.393035, 0.486155)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 44
+text = "Cost: "
+vertical_alignment = 1
+
+[node name="price_3" type="Label" parent="Buttons/Item_3"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 264.0
+offset_right = 235.0
+offset_bottom = 353.0
+scale = Vector2(0.438399, 0.496154)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 44
+text = "0"
+vertical_alignment = 1
+
+[node name="reroll" type="Button" parent="Buttons"]
+process_mode = 3
+layout_mode = 0
+offset_left = 416.0
+offset_top = 640.0
+offset_right = 601.0
+offset_bottom = 688.0
+scale = Vector2(0.750742, 0.849437)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dt0pr")
+text = "Reroll"
+
+[node name="cost_reroll" type="Label" parent="Buttons/reroll"]
+layout_mode = 0
+offset_left = 2.09808e-05
+offset_top = 49.4445
+offset_right = 157.0
+offset_bottom = 98.4445
+scale = Vector2(0.546261, 0.562859)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 36
+text = "Cost: 
+"
+vertical_alignment = 1
+
+[node name="price_reroll" type="Label" parent="Buttons/reroll"]
+layout_mode = 0
+offset_left = 85.249
+offset_top = 48.2672
+offset_right = 242.249
+offset_bottom = 97.2672
+scale = Vector2(0.630499, 0.613919)
+theme_override_colors/font_color = Color(0.760784, 0.00392157, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 36
+text = "20"
+vertical_alignment = 1
+
+[node name="Not_Enoough" type="Label" parent="Buttons/reroll"]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = -85.249
+offset_right = 273.751
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(44.149, 100.02, 0.0666667, 1)
+theme_override_fonts/font = ExtResource("4_ujnbo")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_lqsxq")
+text = "NOT ENOUGH"
+
+[node name="Player_Current_attributes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player_Attribute_Space" type="Panel" parent="Player_Current_attributes"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 304.0
+offset_right = 884.0
+offset_bottom = 631.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rl1as")
+
+[node name="Atrributes_title" type="Label" parent="Player_Current_attributes/Player_Attribute_Space"]
+layout_mode = 0
+offset_right = 157.0
+offset_bottom = 25.0
+text = "Attributes"
+label_settings = SubResource("LabelSettings_idob0")
+horizontal_alignment = 1
+
+[node name="Atributes_text" type="Label" parent="Player_Current_attributes/Player_Attribute_Space"]
+process_mode = 3
+layout_mode = 0
+offset_left = 4.0
+offset_top = 27.0
+offset_right = 180.0
+offset_bottom = 300.0
+scale = Vector2(0.753516, 0.805133)
+text = "Health: -1
+Armor: -1
+Shield: -1
+Speed: -1
+Damage: -1
+Fire Rate: -1
+RoboMechanic: -1
+Maneuvering: -1
+Robo AI Integrations: -1
+LifeSteal: -1
+Repair Kits: -1
+Chaos:-1
+"
+label_settings = SubResource("LabelSettings_t4ies")
+script = ExtResource("1_s8jgx")
+
+[node name="Item_Animations" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Buttons/Next_Round" to="." method="_on_next_round_pressed"]
+[connection signal="button_up" from="Buttons/Item_1" to="." method="_on_item_1_button_up"]
+[connection signal="button_up" from="Buttons/Item_2" to="." method="_on_item_2_button_up"]
+[connection signal="button_up" from="Buttons/Item_3" to="." method="_on_item_3_button_up"]
+[connection signal="button_up" from="Buttons/reroll" to="." method="_on_reroll_button_up"]

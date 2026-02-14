@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8q7erru1jnwq"]
+
+[ext_resource type="Script" path="res://Levels/level_1.gd" id="1_l7dx0"]
+[ext_resource type="PackedScene" uid="uid://dlvs83f8avmpm" path="res://Background/BG_level_1.tscn" id="1_rdwxl"]
+[ext_resource type="PackedScene" uid="uid://dqaruup8yffge" path="res://Player/player.tscn" id="2_uw8dc"]
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_l7dx0")
+
+[node name="BG" parent="." instance=ExtResource("1_rdwxl")]
+
+[node name="Player" parent="." instance=ExtResource("2_uw8dc")]
+unique_name_in_owner = true
+position = Vector2(584, 576)
+
+[node name="camera" type="Camera2D" parent="."]
+top_level = true
+z_index = 1
+position = Vector2(576, 152)
+editor_draw_limits = true

@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://xxwtvq51k2l5"]
+
+[ext_resource type="Texture2D" uid="uid://cncsdq75xkt5" path="res://Items/Steak.png" id="1_ccvsm"]
+[ext_resource type="Script" path="res://Items/animated_sprite_2d.gd" id="2_5sevv"]
+[ext_resource type="AudioStream" uid="uid://clt013i44mql7" path="res://audio/squirt-86215.mp3" id="3_rvv1d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8qws"]
+atlas = ExtResource("1_ccvsm")
+region = Rect2(0, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg245"]
+atlas = ExtResource("1_ccvsm")
+region = Rect2(27, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr3tx"]
+atlas = ExtResource("1_ccvsm")
+region = Rect2(54, 0, 27, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgi3o"]
+atlas = ExtResource("1_ccvsm")
+region = Rect2(81, 0, 27, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8coy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8qws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg245")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr3tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgi3o")
+}],
+"loop": true,
+"name": &"meat_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aa6o3"]
+
+[node name="meat" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8coy3")
+animation = &"meat_idle"
+autoplay = "meat_idle"
+frame_progress = 0.37087
+script = ExtResource("2_5sevv")
+
+[node name="sqwelch" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("3_rvv1d")
+volume_db = 14.933
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_aa6o3")
+
+[connection signal="finished" from="AnimatedSprite2D/sqwelch" to="AnimatedSprite2D" method="_on_sqwelch_finished"]
+[connection signal="body_entered" from="Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]

@@ -1,0 +1,1599 @@
+[gd_scene load_steps=25 format=4 uid="uid://c8q7erru1jnwq"]
+
+[ext_resource type="Script" path="res://Levels/level_1.gd" id="1_l7dx0"]
+[ext_resource type="PackedScene" uid="uid://dlvs83f8avmpm" path="res://Background/BG_level_1.tscn" id="1_rdwxl"]
+[ext_resource type="PackedScene" uid="uid://dqaruup8yffge" path="res://Player/player.tscn" id="2_uw8dc"]
+[ext_resource type="Texture2D" uid="uid://sl7ev8hm6ti0" path="res://Background/Tilesets/PS_Tileset_15.png" id="3_wfbuw"]
+[ext_resource type="PackedScene" uid="uid://ccaj07sa7ma26" path="res://Player/basic_bolt_p.tscn" id="5_2et7m"]
+[ext_resource type="PackedScene" uid="uid://btxja6ib2jcij" path="res://Enemies/spawner.tscn" id="6_7q2gn"]
+[ext_resource type="PackedScene" uid="uid://kvcl4g1ek5ll" path="res://Enemies/fghtr_1.tscn" id="6_tqpra"]
+[ext_resource type="Script" path="res://Enemies/spawner.gd" id="7_ec13t"]
+[ext_resource type="PackedScene" uid="uid://dwderkuqd33bj" path="res://Enemies/Bomber_1_bod.tscn" id="8_fhsxr"]
+[ext_resource type="PackedScene" uid="uid://cemjqxwp2xc0m" path="res://Enemies/advanced_fighter.tscn" id="10_k8ky7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkr1i"]
+texture = ExtResource("3_wfbuw")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+6:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+14:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+20:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+27:0/0 = 0
+28:0/0 = 0
+29:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+20:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+27:1/0 = 0
+28:1/0 = 0
+29:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+28:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+11:3/0 = 0
+22:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+27:3/0 = 0
+28:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+22:4/0 = 0
+7:5/0 = 0
+11:5/0 = 0
+13:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+21:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+27:5/0 = 0
+28:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+21:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+26:6/0 = 0
+27:6/0 = 0
+28:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+10:7/0 = 0
+13:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+21:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+27:7/0 = 0
+28:7/0 = 0
+29:7/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+27:8/0 = 0
+28:8/0 = 0
+29:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+7:9/0 = 0
+10:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+28:10/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+25:11/0 = 0
+26:11/0 = 0
+27:11/0 = 0
+28:11/0 = 0
+29:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+25:12/0 = 0
+26:12/0 = 0
+27:12/0 = 0
+28:12/0 = 0
+29:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+25:13/0 = 0
+26:13/0 = 0
+27:13/0 = 0
+28:13/0 = 0
+29:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+2:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:14/0 = 0
+4:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+25:14/0 = 0
+27:14/0 = 0
+28:14/0 = 0
+29:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+15:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+25:15/0 = 0
+27:15/0 = 0
+28:15/0 = 0
+29:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+17:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+23:16/0 = 0
+24:16/0 = 0
+25:16/0 = 0
+27:16/0 = 0
+28:16/0 = 0
+29:16/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4r1qq"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tkr1i")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rmrh"]
+texture = ExtResource("3_wfbuw")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+6:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+14:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:0/0 = 0
+20:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+27:0/0 = 0
+28:0/0 = 0
+29:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+20:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+27:1/0 = 0
+28:1/0 = 0
+29:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+28:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+11:3/0 = 0
+22:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+27:3/0 = 0
+28:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+22:4/0 = 0
+7:5/0 = 0
+11:5/0 = 0
+13:5/0 = 0
+13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+21:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+27:5/0 = 0
+28:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+21:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+26:6/0 = 0
+27:6/0 = 0
+28:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+10:7/0 = 0
+13:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+21:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+27:7/0 = 0
+28:7/0 = 0
+29:7/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+27:8/0 = 0
+28:8/0 = 0
+29:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+7:9/0 = 0
+10:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+28:10/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+25:11/0 = 0
+26:11/0 = 0
+27:11/0 = 0
+28:11/0 = 0
+29:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+25:12/0 = 0
+26:12/0 = 0
+27:12/0 = 0
+28:12/0 = 0
+29:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+25:13/0 = 0
+26:13/0 = 0
+27:13/0 = 0
+28:13/0 = 0
+29:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+25:14/0 = 0
+27:14/0 = 0
+28:14/0 = 0
+29:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+15:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+25:15/0 = 0
+27:15/0 = 0
+28:15/0 = 0
+29:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+17:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+23:16/0 = 0
+24:16/0 = 0
+25:16/0 = 0
+27:16/0 = 0
+28:16/0 = 0
+29:16/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wklxj"]
+physics_layer_0/collision_layer = 254
+physics_layer_0/collision_mask = 254
+sources/0 = SubResource("TileSetAtlasSource_8rmrh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iy70f"]
+size = Vector2(4.65024, 146.819)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8355m"]
+size = Vector2(76.4319, 145.919)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ltwm7"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rsf6c"]
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r3d0y"]
+font_size = 5
+outline_size = 1
+outline_color = Color(0.12549, 1, 0.0980392, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cnq82"]
+size = Vector2(5, 5)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3mnkj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qpu3w"]
+size = Vector2(5, 5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5fy2"]
+texture = ExtResource("3_wfbuw")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+6:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+14:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+20:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+27:0/0 = 0
+28:0/0 = 0
+29:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+14:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+20:1/0 = 0
+23:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+27:1/0 = 0
+28:1/0 = 0
+29:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+14:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+20:2/0 = 0
+22:2/0 = 0
+24:2/0 = 0
+25:2/0 = 0
+26:2/0 = 0
+27:2/0 = 0
+28:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+11:3/0 = 0
+22:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+27:3/0 = 0
+28:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+22:4/0 = 0
+7:5/0 = 0
+11:5/0 = 0
+13:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+21:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+27:5/0 = 0
+28:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+13:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+21:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+26:6/0 = 0
+27:6/0 = 0
+28:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+10:7/0 = 0
+13:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+21:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+27:7/0 = 0
+28:7/0 = 0
+29:7/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+27:8/0 = 0
+28:8/0 = 0
+29:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+7:9/0 = 0
+10:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+28:10/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+25:11/0 = 0
+26:11/0 = 0
+27:11/0 = 0
+28:11/0 = 0
+29:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+25:12/0 = 0
+26:12/0 = 0
+27:12/0 = 0
+28:12/0 = 0
+29:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+25:13/0 = 0
+26:13/0 = 0
+27:13/0 = 0
+28:13/0 = 0
+29:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+25:14/0 = 0
+27:14/0 = 0
+28:14/0 = 0
+29:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+15:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+25:15/0 = 0
+27:15/0 = 0
+28:15/0 = 0
+29:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+17:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+23:16/0 = 0
+24:16/0 = 0
+25:16/0 = 0
+27:16/0 = 0
+28:16/0 = 0
+29:16/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_saqah"]
+sources/0 = SubResource("TileSetAtlasSource_m5fy2")
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_l7dx0")
+
+[node name="BG" parent="." instance=ExtResource("1_rdwxl")]
+
+[node name="Player" parent="." groups=["Playergroup", "Redfleetgroup"] instance=ExtResource("2_uw8dc")]
+unique_name_in_owner = true
+position = Vector2(584, 576)
+basic_bolt = ExtResource("5_2et7m")
+
+[node name="camera" type="Camera2D" parent="."]
+top_level = true
+z_index = 1
+position = Vector2(584, 211)
+scale = Vector2(-12.0424, -5.5548)
+zoom = Vector2(1.1, 1)
+editor_draw_limits = true
+
+[node name="World_Boundary" type="TileMapLayer" parent="camera"]
+visible = false
+position = Vector2(3.98592, -22.5031)
+scale = Vector2(-0.529463, -0.24588)
+tile_map_data = PackedByteArray("AAD5/w8AAAACAA4AAAD5/xAAAAACAA4AAAD5/xEAAAACAA4AAAD5/xIAAAACAA4AAAD5/xMAAAACAA4AAAD5/xQAAAACAA4AAAD5/xUAAAACAA4AAAD5/xYAAAACAA4AAAD5/xcAAAACAA4AAAD5/xgAAAACAA4AAAD5/xkAAAACAA4AAAD5/xoAAAACAA4AAAD5/xsAAAACAA4AAAD5/xwAAAACAA4AAAD5/x0AAAACAA4AAAD5/x4AAAACAA4AAAD6/w8AAAACAA4AAAD6/xAAAAACAA4AAAD6/xEAAAACAA4AAAD6/xIAAAACAA4AAAD6/xMAAAACAA4AAAD6/xQAAAACAA4AAAD6/xUAAAACAA4AAAD6/xYAAAACAA4AAAD6/xcAAAACAA4AAAD6/xgAAAACAA4AAAD6/xkAAAACAA4AAAD6/xoAAAACAA4AAAD6/xsAAAACAA4AAAD6/xwAAAACAA4AAAD6/x0AAAACAA4AAAD6/x4AAAACAA4AAAD7/w8AAAACAA4AAAD7/xAAAAACAA4AAAD7/xEAAAACAA4AAAD7/xIAAAACAA4AAAD7/xMAAAACAA4AAAD7/xQAAAACAA4AAAD7/xUAAAACAA4AAAD7/xYAAAACAA4AAAD7/xcAAAACAA4AAAD7/xgAAAACAA4AAAD7/xkAAAACAA4AAAD7/xoAAAACAA4AAAD7/xsAAAACAA4AAAD7/xwAAAACAA4AAAD7/x0AAAACAA4AAAD7/x4AAAACAA4AAAD8/w8AAAACAA4AAAD8/xAAAAACAA4AAAD8/xEAAAACAA4AAAD8/xIAAAACAA4AAAD8/xMAAAACAA4AAAD8/xQAAAACAA4AAAD8/xUAAAACAA4AAAD8/xYAAAACAA4AAAD8/xcAAAACAA4AAAD8/xgAAAACAA4AAAD8/xkAAAACAA4AAAD8/xoAAAACAA4AAAD8/xsAAAACAA4AAAD8/xwAAAACAA4AAAD8/x0AAAACAA4AAAD8/x4AAAACAA4AAAD9/w8AAAACAA4AAAD9/xAAAAACAA4AAAD9/xEAAAACAA4AAAD9/xIAAAACAA4AAAD9/xMAAAACAA4AAAD9/xQAAAACAA4AAAD9/xUAAAACAA4AAAD9/xYAAAACAA4AAAD9/xcAAAACAA4AAAD9/xgAAAACAA4AAAD9/xkAAAACAA4AAAD9/xoAAAACAA4AAAD9/xsAAAACAA4AAAD9/xwAAAACAA4AAAD9/x0AAAACAA4AAAD9/x4AAAACAA4AAAD+/w8AAAACAA4AAAD+/xAAAAACAA4AAAD+/xEAAAACAA4AAAD+/xIAAAACAA4AAAD+/xMAAAACAA4AAAD+/xQAAAACAA4AAAD+/xUAAAACAA4AAAD+/xYAAAACAA4AAAD+/xcAAAACAA4AAAD+/xgAAAACAA4AAAD+/xkAAAACAA4AAAD+/xoAAAACAA4AAAD+/xsAAAACAA4AAAD+/xwAAAACAA4AAAD+/x0AAAACAA4AAAD+/x4AAAACAA4AAAD//w8AAAACAA4AAAD//xAAAAACAA4AAAD//xEAAAACAA4AAAD//xIAAAACAA4AAAD//xMAAAACAA4AAAD//xQAAAACAA4AAAD//xUAAAACAA4AAAD//xYAAAACAA4AAAD//xcAAAACAA4AAAD//xgAAAACAA4AAAD//xkAAAACAA4AAAD//xoAAAACAA4AAAD//xsAAAACAA4AAAD//xwAAAACAA4AAAD//x0AAAACAA4AAAD//x4AAAACAA4AAAAAAA8AAAACAA4AAAAAABAAAAACAA4AAAAAABEAAAACAA4AAAAAABIAAAACAA4AAAAAABMAAAACAA4AAAAAABQAAAACAA4AAAAAABUAAAACAA4AAAAAABYAAAACAA4AAAAAABcAAAACAA4AAAAAABgAAAACAA4AAAAAABkAAAACAA4AAAAAABoAAAACAA4AAAAAABsAAAACAA4AAAAAABwAAAACAA4AAAAAAB0AAAACAA4AAAAAAB4AAAACAA4AAAABAA8AAAACAA4AAAABABAAAAACAA4AAAABABEAAAACAA4AAAABABIAAAACAA4AAAABABMAAAACAA4AAAABABQAAAACAA4AAAABABUAAAACAA4AAAABABYAAAACAA4AAAABABcAAAACAA4AAAABABgAAAACAA4AAAABABkAAAACAA4AAAABABoAAAACAA4AAAABABsAAAACAA4AAAABABwAAAACAA4AAAABAB0AAAACAA4AAAABAB4AAAACAA4AAAACAA8AAAACAA4AAAACABAAAAACAA4AAAACABEAAAACAA4AAAACABIAAAACAA4AAAACABMAAAACAA4AAAACABQAAAACAA4AAAACABUAAAACAA4AAAACABYAAAACAA4AAAACABcAAAACAA4AAAACABgAAAACAA4AAAACABkAAAACAA4AAAACABoAAAACAA4AAAACABsAAAACAA4AAAACABwAAAACAA4AAAACAB0AAAACAA4AAAACAB4AAAACAA4AAAADAA8AAAACAA4AAAADABAAAAACAA4AAAADABEAAAACAA4AAAADABIAAAACAA4AAAADABMAAAACAA4AAAADABQAAAACAA4AAAADABUAAAACAA4AAAADABYAAAACAA4AAAADABcAAAACAA4AAAADABgAAAACAA4AAAADABkAAAACAA4AAAADABoAAAACAA4AAAADABsAAAACAA4AAAADABwAAAACAA4AAAADAB0AAAACAA4AAAADAB4AAAACAA4AAAAEAA8AAAACAA4AAAAEABAAAAACAA4AAAAEABEAAAACAA4AAAAEABIAAAACAA4AAAAEABMAAAACAA4AAAAEABQAAAACAA4AAAAEABUAAAACAA4AAAAEABYAAAACAA4AAAAEABcAAAACAA4AAAAEABgAAAACAA4AAAAEABkAAAACAA4AAAAEABoAAAACAA4AAAAEABsAAAACAA4AAAAEABwAAAACAA4AAAAEAB0AAAACAA4AAAAEAB4AAAACAA4AAAAFAA8AAAACAA4AAAAFABAAAAACAA4AAAAFABEAAAACAA4AAAAFABIAAAACAA4AAAAFABMAAAACAA4AAAAFABQAAAACAA4AAAAFABUAAAACAA4AAAAFABYAAAACAA4AAAAFABcAAAACAA4AAAAFABgAAAACAA4AAAAFABkAAAACAA4AAAAFABoAAAACAA4AAAAFABsAAAACAA4AAAAFABwAAAACAA4AAAAFAB0AAAACAA4AAAAFAB4AAAACAA4AAAAGAA8AAAACAA4AAAAGABAAAAACAA4AAAAGABEAAAACAA4AAAAGABIAAAACAA4AAAAGABMAAAACAA4AAAAGABQAAAACAA4AAAAGABUAAAACAA4AAAAGABYAAAACAA4AAAAGABcAAAACAA4AAAAGABgAAAACAA4AAAAGABkAAAACAA4AAAAGABoAAAACAA4AAAAGABsAAAACAA4AAAAGABwAAAACAA4AAAAGAB0AAAACAA4AAAAGAB4AAAACAA4AAAAHAA8AAAACAA4AAAAHABAAAAACAA4AAAAHABEAAAACAA4AAAAHABIAAAACAA4AAAAHABMAAAACAA4AAAAHABQAAAACAA4AAAAHABUAAAACAA4AAAAHABYAAAACAA4AAAAHABcAAAACAA4AAAAHABgAAAACAA4AAAAHABkAAAACAA4AAAAHABoAAAACAA4AAAAHABsAAAACAA4AAAAHABwAAAACAA4AAAAHAB0AAAACAA4AAAAHAB4AAAACAA4AAAD5/9v/AAACAA4AAAD5/9z/AAACAA4AAAD5/93/AAACAA4AAAD5/97/AAACAA4AAAD5/9//AAACAA4AAAD5/+D/AAACAA4AAAD5/+H/AAACAA4AAAD5/+L/AAACAA4AAAD5/+P/AAACAA4AAAD5/+T/AAACAA4AAAD5/+X/AAACAA4AAAD5/+b/AAACAA4AAAD5/+f/AAACAA4AAAD5/+j/AAACAA4AAAD5/+n/AAACAA4AAAD5/+r/AAACAA4AAAD5/+v/AAACAA4AAAD5/+z/AAACAA4AAAD5/+3/AAACAA4AAAD5/+7/AAACAA4AAAD5/+//AAACAA4AAAD5//D/AAACAA4AAAD5//H/AAACAA4AAAD5//L/AAACAA4AAAD5//P/AAACAA4AAAD5//T/AAACAA4AAAD5//X/AAACAA4AAAD5//b/AAACAA4AAAD5//f/AAACAA4AAAD5//j/AAACAA4AAAD5//n/AAACAA4AAAD5//r/AAACAA4AAAD5//v/AAACAA4AAAD5//z/AAACAA4AAAD5//3/AAACAA4AAAD5//7/AAACAA4AAAD5////AAACAA4AAAD5/wAAAAACAA4AAAD5/wEAAAACAA4AAAD5/wIAAAACAA4AAAD5/wMAAAACAA4AAAD5/wQAAAACAA4AAAD5/wUAAAACAA4AAAD5/wYAAAACAA4AAAD5/wcAAAACAA4AAAD5/wgAAAACAA4AAAD5/wkAAAACAA4AAAD5/woAAAACAA4AAAD5/wsAAAACAA4AAAD5/wwAAAACAA4AAAD5/w0AAAACAA4AAAD5/w4AAAACAA4AAAD6/9v/AAACAA4AAAD6/9z/AAACAA4AAAD6/93/AAACAA4AAAD6/97/AAACAA4AAAD6/9//AAACAA4AAAD6/+D/AAACAA4AAAD6/+H/AAACAA4AAAD6/+L/AAACAA4AAAD6/+P/AAACAA4AAAD6/+T/AAACAA4AAAD6/+X/AAACAA4AAAD6/+b/AAACAA4AAAD6/+f/AAACAA4AAAD6/+j/AAACAA4AAAD6/+n/AAACAA4AAAD6/+r/AAACAA4AAAD6/+v/AAACAA4AAAD6/+z/AAACAA4AAAD6/+3/AAACAA4AAAD6/+7/AAACAA4AAAD6/+//AAACAA4AAAD6//D/AAACAA4AAAD6//H/AAACAA4AAAD6//L/AAACAA4AAAD6//P/AAACAA4AAAD6//T/AAACAA4AAAD6//X/AAACAA4AAAD6//b/AAACAA4AAAD6//f/AAACAA4AAAD6//j/AAACAA4AAAD6//n/AAACAA4AAAD6//r/AAACAA4AAAD6//v/AAACAA4AAAD6//z/AAACAA4AAAD6//3/AAACAA4AAAD6//7/AAACAA4AAAD6////AAACAA4AAAD6/wAAAAACAA4AAAD6/wEAAAACAA4AAAD6/wIAAAACAA4AAAD6/wMAAAACAA4AAAD6/wQAAAACAA4AAAD6/wUAAAACAA4AAAD6/wYAAAACAA4AAAD6/wcAAAACAA4AAAD6/wgAAAACAA4AAAD6/wkAAAACAA4AAAD6/woAAAACAA4AAAD6/wsAAAACAA4AAAD6/wwAAAACAA4AAAD6/w0AAAACAA4AAAD6/w4AAAACAA4AAAD7/9v/AAACAA4AAAD7/9z/AAACAA4AAAD7/93/AAACAA4AAAD7/97/AAACAA4AAAD7/9//AAACAA4AAAD7/+D/AAACAA4AAAD7/+H/AAACAA4AAAD7/+L/AAACAA4AAAD7/+P/AAACAA4AAAD7/+T/AAACAA4AAAD7/+X/AAACAA4AAAD7/+b/AAACAA4AAAD7/+f/AAACAA4AAAD7/+j/AAACAA4AAAD7/+n/AAACAA4AAAD7/+r/AAACAA4AAAD7/+v/AAACAA4AAAD7/+z/AAACAA4AAAD7/+3/AAACAA4AAAD7/+7/AAACAA4AAAD7/+//AAACAA4AAAD7//D/AAACAA4AAAD7//H/AAACAA4AAAD7//L/AAACAA4AAAD7//P/AAACAA4AAAD7//T/AAACAA4AAAD7//X/AAACAA4AAAD7//b/AAACAA4AAAD7//f/AAACAA4AAAD7//j/AAACAA4AAAD7//n/AAACAA4AAAD7//r/AAACAA4AAAD7//v/AAACAA4AAAD7//z/AAACAA4AAAD7//3/AAACAA4AAAD7//7/AAACAA4AAAD7////AAACAA4AAAD7/wAAAAACAA4AAAD7/wEAAAACAA4AAAD7/wIAAAACAA4AAAD7/wMAAAACAA4AAAD7/wQAAAACAA4AAAD7/wUAAAACAA4AAAD7/wYAAAACAA4AAAD7/wcAAAACAA4AAAD7/wgAAAACAA4AAAD7/wkAAAACAA4AAAD7/woAAAACAA4AAAD7/wsAAAACAA4AAAD7/wwAAAACAA4AAAD7/w0AAAACAA4AAAD7/w4AAAACAA4AAAD8/9v/AAACAA4AAAD8/9z/AAACAA4AAAD8/93/AAACAA4AAAD8/97/AAACAA4AAAD8/9//AAACAA4AAAD8/+D/AAACAA4AAAD8/+H/AAACAA4AAAD8/+L/AAACAA4AAAD8/+P/AAACAA4AAAD8/+T/AAACAA4AAAD8/+X/AAACAA4AAAD8/+b/AAACAA4AAAD8/+f/AAACAA4AAAD8/+j/AAACAA4AAAD8/+n/AAACAA4AAAD9/9v/AAACAA4AAAD9/9z/AAACAA4AAAD9/93/AAACAA4AAAD9/97/AAACAA4AAAD9/9//AAACAA4AAAD9/+D/AAACAA4AAAD9/+H/AAACAA4AAAD9/+L/AAACAA4AAAD9/+P/AAACAA4AAAD9/+T/AAACAA4AAAD9/+X/AAACAA4AAAD9/+b/AAACAA4AAAD9/+f/AAACAA4AAAD9/+j/AAACAA4AAAD9/+n/AAACAA4AAAD+/9v/AAACAA4AAAD+/9z/AAACAA4AAAD+/93/AAACAA4AAAD+/97/AAACAA4AAAD+/9//AAACAA4AAAD+/+D/AAACAA4AAAD+/+H/AAACAA4AAAD+/+L/AAACAA4AAAD+/+P/AAACAA4AAAD+/+T/AAACAA4AAAD+/+X/AAACAA4AAAD+/+b/AAACAA4AAAD+/+f/AAACAA4AAAD+/+j/AAACAA4AAAD+/+n/AAACAA4AAAD//9v/AAACAA4AAAD//9z/AAACAA4AAAD//93/AAACAA4AAAD//97/AAACAA4AAAD//9//AAACAA4AAAD//+D/AAACAA4AAAD//+H/AAACAA4AAAD//+L/AAACAA4AAAD//+P/AAACAA4AAAD//+T/AAACAA4AAAD//+X/AAACAA4AAAD//+b/AAACAA4AAAD//+f/AAACAA4AAAD//+j/AAACAA4AAAD//+n/AAACAA4AAAAAANv/AAACAA4AAAAAANz/AAACAA4AAAAAAN3/AAACAA4AAAAAAN7/AAACAA4AAAAAAN//AAACAA4AAAAAAOD/AAACAA4AAAAAAOH/AAACAA4AAAAAAOL/AAACAA4AAAAAAOP/AAACAA4AAAAAAOT/AAACAA4AAAAAAOX/AAACAA4AAAAAAOb/AAACAA4AAAAAAOf/AAACAA4AAAAAAOj/AAACAA4AAAAAAOn/AAACAA4AAAABANv/AAACAA4AAAABANz/AAACAA4AAAABAN3/AAACAA4AAAABAN7/AAACAA4AAAABAN//AAACAA4AAAABAOD/AAACAA4AAAABAOH/AAACAA4AAAABAOL/AAACAA4AAAABAOP/AAACAA4AAAABAOT/AAACAA4AAAABAOX/AAACAA4AAAABAOb/AAACAA4AAAABAOf/AAACAA4AAAABAOj/AAACAA4AAAABAOn/AAACAA4AAAACANv/AAACAA4AAAACANz/AAACAA4AAAACAN3/AAACAA4AAAACAN7/AAACAA4AAAACAN//AAACAA4AAAACAOD/AAACAA4AAAACAOH/AAACAA4AAAACAOL/AAACAA4AAAACAOP/AAACAA4AAAACAOT/AAACAA4AAAACAOX/AAACAA4AAAACAOb/AAACAA4AAAACAOj/AAACAA4AAAACAOn/AAACAA4AAAADANv/AAACAA4AAAADANz/AAACAA4AAAADAN3/AAACAA4AAAADAN7/AAACAA4AAAADAN//AAACAA4AAAADAOD/AAACAA4AAAADAOH/AAACAA4AAAADAOL/AAACAA4AAAADAOP/AAACAA4AAAADAOT/AAACAA4AAAADAOX/AAACAA4AAAADAOb/AAACAA4AAAADAOf/AAACAA4AAAADAOj/AAACAA4AAAADAOn/AAACAA4AAAAEANv/AAACAA4AAAAEANz/AAACAA4AAAAEAN3/AAACAA4AAAAEAN7/AAACAA4AAAAEAN//AAACAA4AAAAEAOD/AAACAA4AAAAEAOH/AAACAA4AAAAEAOL/AAACAA4AAAAEAOP/AAACAA4AAAAEAOT/AAACAA4AAAAEAOX/AAACAA4AAAAEAOb/AAACAA4AAAAEAOf/AAACAA4AAAAEAOj/AAACAA4AAAAEAOn/AAACAA4AAAAFANv/AAACAA4AAAAFANz/AAACAA4AAAAFAN3/AAACAA4AAAAFAN7/AAACAA4AAAAFAN//AAACAA4AAAAFAOD/AAACAA4AAAAFAOH/AAACAA4AAAAFAOL/AAACAA4AAAAFAOP/AAACAA4AAAAFAOT/AAACAA4AAAAFAOX/AAACAA4AAAAFAOb/AAACAA4AAAAFAOf/AAACAA4AAAAFAOj/AAACAA4AAAAFAOn/AAACAA4AAAAFAOr/AAACAA4AAAAFAOv/AAACAA4AAAAFAOz/AAACAA4AAAAFAO3/AAACAA4AAAAFAO7/AAACAA4AAAAFAO//AAACAA4AAAAFAPD/AAACAA4AAAAFAPH/AAACAA4AAAAFAPL/AAACAA4AAAAFAPP/AAACAA4AAAAFAPT/AAACAA4AAAAFAPX/AAACAA4AAAAFAPb/AAACAA4AAAAFAPf/AAACAA4AAAAFAPj/AAACAA4AAAAFAPn/AAACAA4AAAAFAPr/AAACAA4AAAAFAPv/AAACAA4AAAAFAPz/AAACAA4AAAAFAP3/AAACAA4AAAAFAP7/AAACAA4AAAAFAP//AAACAA4AAAAFAAAAAAACAA4AAAAFAAEAAAACAA4AAAAFAAIAAAACAA4AAAAFAAMAAAACAA4AAAAFAAQAAAACAA4AAAAFAAUAAAACAA4AAAAFAAYAAAACAA4AAAAFAAcAAAACAA4AAAAFAAgAAAACAA4AAAAFAAkAAAACAA4AAAAFAAoAAAACAA4AAAAFAAsAAAACAA4AAAAFAAwAAAACAA4AAAAFAA0AAAACAA4AAAAFAA4AAAACAA4AAAAGAOr/AAACAA4AAAAGAOv/AAACAA4AAAAGAOz/AAACAA4AAAAGAO3/AAACAA4AAAAGAO7/AAACAA4AAAAGAO//AAACAA4AAAAGAPD/AAACAA4AAAAGAPH/AAACAA4AAAAGAPL/AAACAA4AAAAGAPP/AAACAA4AAAAGAPT/AAACAA4AAAAGAPX/AAACAA4AAAAGAPb/AAACAA4AAAAGAPf/AAACAA4AAAAGAPj/AAACAA4AAAAGAPn/AAACAA4AAAAGAPr/AAACAA4AAAAGAPv/AAACAA4AAAAGAPz/AAACAA4AAAAGAP3/AAACAA4AAAAGAP7/AAACAA4AAAAGAP//AAACAA4AAAAGAAAAAAACAA4AAAAGAAEAAAACAA4AAAAGAAIAAAACAA4AAAAGAAMAAAACAA4AAAAGAAQAAAACAA4AAAAGAAUAAAACAA4AAAAGAAYAAAACAA4AAAAGAAcAAAACAA4AAAAGAAgAAAACAA4AAAAGAAkAAAACAA4AAAAGAAoAAAACAA4AAAAGAAsAAAACAA4AAAAGAAwAAAACAA4AAAAGAA0AAAACAA4AAAAGAA4AAAACAA4AAAAHAA4AAAACAA4AAAAHAA0AAAACAA4AAAAHAAwAAAACAA4AAAAHAAsAAAACAA4AAAAHAAoAAAACAA4AAAAHAAkAAAACAA4AAAAHAAgAAAACAA4AAAAHAAcAAAACAA4AAAAHAAYAAAACAA4AAAAHAAUAAAACAA4AAAAHAAQAAAACAA4AAAAHAAMAAAACAA4AAAAHAAIAAAACAA4AAAAHAAEAAAACAA4AAAAHAAAAAAACAA4AAAAHAP//AAACAA4AAAAHAP7/AAACAA4AAAAHAP3/AAACAA4AAAAHAPz/AAACAA4AAAAHAPv/AAACAA4AAAAHAPr/AAACAA4AAAAHAPn/AAACAA4AAAAHAPj/AAACAA4AAAAHAPf/AAACAA4AAAAHAPb/AAACAA4AAAAHAPX/AAACAA4AAAAHAPT/AAACAA4AAAAHAPP/AAACAA4AAAAHAPL/AAACAA4AAAAGAOn/AAACAA4AAAAGAOj/AAACAA4AAAA=")
+tile_set = SubResource("TileSet_4r1qq")
+
+[node name="Fleet_Boundary" type="TileMapLayer" parent="camera"]
+visible = false
+position = Vector2(3.98592, -22.5031)
+rotation = 3.14159
+scale = Vector2(0.529463, 0.24588)
+tile_map_data = PackedByteArray("AAD7/9X/AAARAAAAAAD7/9b/AAARAAAAAAD7/9f/AAARAAAAAAD7/9j/AAARAAAAAAD7/9n/AAARAAAAAAD7/9r/AAARAAAAAAD7/9v/AAARAAAAAAD7/9z/AAARAAAAAAD7/93/AAARAAAAAAD7/97/AAARAAAAAAD7/9//AAARAAAAAAD7/+D/AAARAAAAAAD7/+H/AAARAAAAAAD7/+L/AAARAAAAAAD7/+P/AAARAAAAAAD7/+T/AAARAAAAAAD7/+X/AAARAAAAAAD7/+b/AAARAAAAAAD7/+f/AAARAAAAAAD7/+j/AAARAAAAAAD7/+n/AAARAAAAAAD7/+r/AAARAAAAAAD7/+v/AAARAAAAAAD7/+z/AAARAAAAAAD7/+3/AAARAAAAAAD7/+7/AAARAAAAAAD7/+//AAARAAAAAAD7//D/AAARAAAAAAD7//H/AAARAAAAAAD7//L/AAARAAAAAAD7//P/AAARAAAAAAD7//T/AAARAAAAAAD7//X/AAARAAAAAAD7//b/AAARAAAAAAD7//f/AAARAAAAAAD7//j/AAARAAAAAAD7//n/AAARAAAAAAD7//r/AAARAAAAAAD7//v/AAARAAAAAAD7//z/AAARAAAAAAD7//3/AAARAAAAAAD7//7/AAARAAAAAAD7////AAARAAAAAAD7/wAAAAARAAAAAAD7/wEAAAARAAAAAAD7/wIAAAARAAAAAAD7/wMAAAARAAAAAAD7/wQAAAARAAAAAAD7/wUAAAARAAAAAAD7/wYAAAARAAAAAAD7/wcAAAARAAAAAAD7/wgAAAARAAAAAAD7/wkAAAARAAAAAAD7/woAAAARAAAAAAD7/wsAAAARAAAAAAD7/wwAAAARAAAAAAD7/w0AAAARAAAAAAD7/w4AAAARAAAAAAD7/w8AAAARAAAAAAD7/xAAAAARAAAAAAD7/xEAAAARAAAAAAD7/xIAAAARAAAAAAD7/xMAAAARAAAAAAD7/xQAAAARAAAAAAD7/xUAAAARAAAAAAD7/xYAAAARAAAAAAD7/xcAAAARAAAAAAD7/xgAAAARAAAAAAD7/xkAAAARAAAAAAD7/xoAAAARAAAAAAD7/xsAAAARAAAAAAD7/xwAAAARAAAAAAD7/x0AAAARAAAAAAD7/x4AAAARAAAAAAAFANX/AAARAAAAAAAFANb/AAARAAAAAAAFANf/AAARAAAAAAAFANj/AAARAAAAAAAFANn/AAARAAAAAAAFANr/AAARAAAAAAAFANv/AAARAAAAAAAFANz/AAARAAAAAAAFAN3/AAARAAAAAAAFAN7/AAARAAAAAAAFAN//AAARAAAAAAAFAOD/AAARAAAAAAAFAOH/AAARAAAAAAAFAOL/AAARAAAAAAAFAOP/AAARAAAAAAAFAOT/AAARAAAAAAAFAOX/AAARAAAAAAAFAOb/AAARAAAAAAAFAOf/AAARAAAAAAAFAOj/AAARAAAAAAAFAOn/AAARAAAAAAAFAOr/AAARAAAAAAAFAOv/AAARAAAAAAAFAOz/AAARAAAAAAAFAO3/AAARAAAAAAAFAO7/AAARAAAAAAAFAO//AAARAAAAAAAFAPD/AAARAAAAAAAFAPH/AAARAAAAAAAFAPL/AAARAAAAAAAFAPP/AAARAAAAAAAFAPT/AAARAAAAAAAFAPX/AAARAAAAAAAFAPb/AAARAAAAAAAFAPf/AAARAAAAAAAFAPj/AAARAAAAAAAFAPn/AAARAAAAAAAFAPr/AAARAAAAAAAFAPv/AAARAAAAAAAFAPz/AAARAAAAAAAFAP3/AAARAAAAAAAFAP7/AAARAAAAAAAFAP//AAARAAAAAAAFAAAAAAARAAAAAAAFAAEAAAARAAAAAAAFAAIAAAARAAAAAAAFAAMAAAARAAAAAAAFAAQAAAARAAAAAAAFAAUAAAARAAAAAAAFAAYAAAARAAAAAAAFAAcAAAARAAAAAAAFAAgAAAARAAAAAAAFAAkAAAARAAAAAAAFAAoAAAARAAAAAAAFAAsAAAARAAAAAAAFAAwAAAARAAAAAAAFAA0AAAARAAAAAAAFAA4AAAARAAAAAAAFAA8AAAARAAAAAAAFABAAAAARAAAAAAAFABEAAAARAAAAAAAFABIAAAARAAAAAAAFABMAAAARAAAAAAAFABQAAAARAAAAAAAFABUAAAARAAAAAAAFABYAAAARAAAAAAAFABcAAAARAAAAAAAFABgAAAARAAAAAAAFABkAAAARAAAAAAAFABoAAAARAAAAAAAFABsAAAARAAAAAAAFABwAAAARAAAAAAAFAB0AAAARAAAAAAAFAB4AAAARAAAAAAAFAB8AAAARAAAAAAA=")
+tile_set = SubResource("TileSet_wklxj")
+
+[node name="Fleet_sliding" type="Area2D" parent="camera"]
+unique_name_in_owner = true
+position = Vector2(45.1737, 53.8273)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera/Fleet_sliding"]
+light_mask = 1022
+visibility_layer = 1022
+position = Vector2(-4.65024, -63.3686)
+shape = SubResource("RectangleShape2D_iy70f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="camera/Fleet_sliding"]
+light_mask = 1022
+visibility_layer = 1022
+position = Vector2(-86.3615, -60.4882)
+shape = SubResource("RectangleShape2D_iy70f")
+
+[node name="Play_Zone" type="Area2D" parent="camera"]
+position = Vector2(27.2371, 50.9469)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera/Play_Zone"]
+position = Vector2(-27.5517, -59.5388)
+shape = SubResource("RectangleShape2D_8355m")
+debug_color = Color(1, 1, 1, 0.0941176)
+
+[node name="Fleet" type="Node2D" parent="camera"]
+position = Vector2(48.4953, 37.9852)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+
+[node name="HUD" type="Control" parent="camera"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1, 1.004)
+
+[node name="Healthbar" type="ColorRect" parent="camera/HUD"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 65.0
+offset_right = 38.0
+offset_bottom = 78.0
+color = Color(0, 1, 1, 0.152941)
+
+[node name="HP_placeholder" type="Label" parent="camera/HUD/Healthbar"]
+layout_mode = 0
+offset_left = 23.2512
+offset_top = 18.7225
+offset_right = 45.2512
+offset_bottom = 41.7225
+rotation = -3.14159
+text = "HP"
+label_settings = SubResource("LabelSettings_ltwm7")
+
+[node name="ColorRect2" type="ColorRect" parent="camera/HUD"]
+layout_mode = 0
+offset_left = -37.8662
+offset_top = 66.7891
+offset_right = -13.8662
+offset_bottom = 78.7891
+
+[node name="Label" type="Label" parent="camera/HUD/ColorRect2"]
+layout_mode = 0
+offset_left = 23.2512
+offset_top = 11.5216
+offset_right = 46.2512
+offset_bottom = 23.5216
+rotation = 3.14159
+text = "WAVE"
+label_settings = SubResource("LabelSettings_rsf6c")
+
+[node name="ColorRect3" type="ColorRect" parent="camera/HUD"]
+layout_mode = 0
+offset_left = -11.9577
+offset_top = 65.3489
+offset_right = 2.04225
+offset_bottom = 72.3489
+color = Color(0, 0, 0, 0.486275)
+
+[node name="Label" type="Label" parent="camera/HUD/ColorRect3"]
+layout_mode = 0
+offset_left = 12.6221
+offset_top = 7.20098
+offset_right = 26.6221
+offset_bottom = 30.201
+rotation = -3.14159
+text = "$$$$"
+label_settings = SubResource("LabelSettings_r3d0y")
+
+[node name="Spawners_fighters" type="Node2D" parent="camera"]
+
+[node name="Spawner" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(29.8944, 122.957)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawner2" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(19.2653, 146)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawner3" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(8.63615, 122.957)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawner4" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(-7.30751, 122.957)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawner5" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(-28.5657, 122.957)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawner6" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(-17.9366, 146)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawner7" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(-1.99296, 157.521)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawner8" parent="camera/Spawners_fighters" instance=ExtResource("6_7q2gn")]
+position = Vector2(3.3216, 157.521)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+gizmo_extents = 41.5
+script = ExtResource("7_ec13t")
+fighter = ExtResource("6_tqpra")
+bomber = ExtResource("8_fhsxr")
+
+[node name="Spawners_Bombers" type="Node2D" parent="camera"]
+position = Vector2(48.4953, 37.9852)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+
+[node name="Spawners_Advanced" type="Node2D" parent="camera"]
+position = Vector2(48.4953, 37.9852)
+rotation = -3.14159
+scale = Vector2(0.0830399, 0.180024)
+
+[node name="Fighter_Formation (?)" type="Node2D" parent="camera"]
+position = Vector2(48.4953, 151.761)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+
+[node name="f1_pos_1" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(224, 160)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_1"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="f1_pos_2" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(480, 160)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_2"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="f1_pos_3" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(352, 32)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_3"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="f1_pos_4" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(544, -32)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_4"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="f1_pos_5" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(608, -32)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_5"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="f1_pos_6" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(672, 160)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_6"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="f1_pos_7" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(928, 160)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_7"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="f1_pos_8" type="Marker2D" parent="camera/Fighter_Formation (?)"]
+position = Vector2(800, 32)
+rotation = 3.14159
+scale = Vector2(12.0424, 5.5548)
+gizmo_extents = 1.0
+
+[node name="fight_1_form_1" type="Sprite2D" parent="camera/Fighter_Formation (?)/f1_pos_8"]
+modulate = Color(0.67109, 0, 0.180784, 1)
+position = Vector2(2.26498e-06, -1.43051e-06)
+scale = Vector2(0.275058, 0.5)
+texture = SubResource("PlaceholderTexture2D_cnq82")
+
+[node name="Bomber_Formation (?)" type="Node2D" parent="camera"]
+position = Vector2(48.4953, 153.201)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+
+[node name="bmb_pos_1" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(288, 32)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_1"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_2" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(416, 32)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_2"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_3" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(544, 32)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_3"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_4" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(608, 32)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_4"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_5" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(736, 32)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_5"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_6" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(864, 32)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_6"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_7" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(352, 160)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_7"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_8" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(416, 160)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_8"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_9" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(544, 160)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_9"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_10" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(608, 160)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_10"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_11" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(736, 160)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_11"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="bmb_pos_12" type="Sprite2D" parent="camera/Bomber_Formation (?)"]
+modulate = Color(0, 0.400228, 0.720966, 1)
+position = Vector2(800, 160)
+scale = Vector2(24, 16)
+texture = SubResource("PlaceholderTexture2D_3mnkj")
+
+[node name="bomb_pos_1" type="Marker2D" parent="camera/Bomber_Formation (?)/bmb_pos_12"]
+position = Vector2(0, -2.38419e-07)
+
+[node name="Advanced_Formation (?)" type="Node2D" parent="camera"]
+position = Vector2(48.4953, 25.0234)
+rotation = 3.14159
+scale = Vector2(0.0830399, 0.180024)
+
+[node name="Adv1_pos_1" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(288, 160)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_1"]
+
+[node name="Adv1_pos_2" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(224, 224)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_2"]
+
+[node name="Adv1_pos_3" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(288, 288)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_3"]
+
+[node name="Adv1_pos_4" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(448, 224)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_4"]
+
+[node name="Adv1_pos_5" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(416, 96)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_5"]
+
+[node name="Adv1_pos_6" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(224, 32)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_6"]
+
+[node name="Adv1_pos_7" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(352, -96)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_7"]
+
+[node name="Adv1_pos_8" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(544, -96)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_8"]
+
+[node name="Adv1_pos_9" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(608, -96)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_9"]
+
+[node name="Adv1_pos_10" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(800, -96)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_10"]
+
+[node name="Adv1_pos_11" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(736, 88)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_11"]
+
+[node name="Adv1_pos_12" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(864, 160)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_12"]
+
+[node name="Adv1_pos_13" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(928, 224)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_13"]
+
+[node name="Adv1_pos_14" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(704, 224)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_14"]
+
+[node name="Adv1_pos_15" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(864, 288)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_15"]
+
+[node name="Adv1_pos_16" type="Sprite2D" parent="camera/Advanced_Formation (?)"]
+modulate = Color(0.531594, 0.000202053, 0.53159, 1)
+position = Vector2(928, 32)
+scale = Vector2(3.2, 3.2)
+texture = SubResource("PlaceholderTexture2D_qpu3w")
+
+[node name="Adv1_form_1" type="Marker2D" parent="camera/Advanced_Formation (?)/Adv1_pos_16"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 2
+tile_set = SubResource("TileSet_saqah")
+
+[node name="ADD ALL NODES YOU WANT IN FRAME" type="Node" parent="."]
+
+[node name="Advanced_Fighter" parent="." instance=ExtResource("10_k8ky7")]
+position = Vector2(585, 168)
+
+[connection signal="body_entered" from="camera/Play_Zone" to="." method="_on_play_zone_body_entered"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner" to="." method="_on_spawner_child_entered_tree"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner2" to="." method="_on_spawner_child_entered_tree"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner3" to="." method="_on_spawner_child_entered_tree"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner4" to="." method="_on_spawner_child_entered_tree"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner5" to="." method="_on_spawner_child_entered_tree"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner6" to="." method="_on_spawner_child_entered_tree"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner7" to="." method="_on_spawner_child_entered_tree"]
+[connection signal="child_entered_tree" from="camera/Spawners_fighters/Spawner8" to="." method="_on_spawner_child_entered_tree"]

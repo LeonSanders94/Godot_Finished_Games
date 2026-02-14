@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3yjdgag1xwj7"]
+
+[ext_resource type="Texture2D" uid="uid://dgi7s3ylvsijn" path="res://Player/mini_bot.png" id="1_t6r4i"]
+[ext_resource type="PackedScene" uid="uid://dqc72niqnabcv" path="res://Player/mini_bot_bolt.tscn" id="2_7o7dy"]
+[ext_resource type="Script" path="res://Player/mini_bot.gd" id="2_mli3g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce08l"]
+atlas = ExtResource("1_t6r4i")
+region = Rect2(0, 0, 32, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmrc1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce08l")
+}],
+"loop": true,
+"name": &"mini_bot_base",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("2_mli3g")
+bot_bolt_scene = ExtResource("2_7o7dy")
+
+[node name="mini_bot" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 2)
+scale = Vector2(1.92039, 1.41951)
+sprite_frames = SubResource("SpriteFrames_wmrc1")
+animation = &"mini_bot_base"
+
+[node name="Marker2D" type="Marker2D" parent="mini_bot"]
+position = Vector2(0.520728, -11.976)

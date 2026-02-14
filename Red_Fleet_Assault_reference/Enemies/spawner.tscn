@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://btxja6ib2jcij"]
+
+[ext_resource type="Script" path="res://Items/Bullets_explosions/spawner_Bombers.gd" id="1_buy0n"]
+
+[node name="Spawner" type="Marker2D"]
+position = Vector2(1, 0)
+gizmo_extents = 27.0
+script = ExtResource("1_buy0n")
+
+[node name="spawn_cooldown" type="Timer" parent="."]
+wait_time = 1.25
+autostart = true
+
+[connection signal="timeout" from="spawn_cooldown" to="." method="_on_spawn_cooldown_timeout"]

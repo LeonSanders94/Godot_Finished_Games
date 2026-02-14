@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceq4ydqjklv85"]
+
+[ext_resource type="Script" uid="uid://dl3yyg016bp0v" path="res://scenes/character_body_2d.gd" id="1_ba0x2"]
+[ext_resource type="Script" uid="uid://o23dir0c7fh7" path="res://scenes/sprite_body.gd" id="2_507ja"]
+[ext_resource type="Texture2D" uid="uid://d2oqdcms4dqvk" path="res://assets/bun.png" id="2_n1ckp"]
+[ext_resource type="Texture2D" uid="uid://50e6cag2iscw" path="res://assets/sandwich_gu.png" id="2_nlgqw"]
+[ext_resource type="AudioStream" uid="uid://m1fv0p2fo6fl" path="res://assets/hotel-bell-ding-1-174457.mp3" id="5_6f2a1"]
+[ext_resource type="AudioStream" uid="uid://cul8ku2tq83td" path="res://assets/slime-squish-4-218568.mp3" id="6_r8v6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1ckp"]
+size = Vector2(82.5, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nlgqw"]
+radius = 8.0
+height = 84.0
+
+[node name="Player_platform" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_507ja")
+
+[node name="SandwichGu" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-80, 72.00001)
+scale = Vector2(3.3750002, 3.7109377)
+texture = ExtResource("2_nlgqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.25, 18)
+shape = SubResource("RectangleShape2D_n1ckp")
+
+[node name="player_tray" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
+motion_mode = 1
+wall_min_slide_angle = 3.1415927
+floor_constant_speed = true
+safe_margin = 0.001
+script = ExtResource("1_ba0x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_tray"]
+light_mask = 3
+visibility_layer = 3
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nlgqw")
+
+[node name="Polygon2D" type="Polygon2D" parent="player_tray"]
+position = Vector2(-60.750004, -17.5)
+scale = Vector2(0.6171875, 1.0625)
+color = Color(0.80754405, 0.5342659, 0.19162819, 1)
+polygon = PackedVector2Array(40, 8, 64, 8, 128, 8, 152, 8, 158, 10, 160, 16, 158, 22, 152, 24, 40, 24, 35, 23, 32, 16, 35, 10)
+
+[node name="Bun" type="Sprite2D" parent="player_tray"]
+position = Vector2(-0.12499845, -0.6249962)
+scale = Vector2(0.3028053, 0.18195271)
+texture = ExtResource("2_n1ckp")
+
+[node name="catch_zone" type="Area2D" parent="player_tray"]
+position = Vector2(8, -16)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="player_tray/catch_zone"]
+position = Vector2(-8, 13)
+polygon = PackedVector2Array(-38, -6, 0, -1, 34, -6)
+
+[node name="HotelBellDing1174457" type="AudioStreamPlayer" parent="player_tray"]
+stream = ExtResource("5_6f2a1")
+
+[node name="SlimeSquish4218568" type="AudioStreamPlayer" parent="player_tray"]
+stream = ExtResource("6_r8v6l")
+
+[connection signal="area_entered" from="player_tray/catch_zone" to="player_tray" method="_on_catch_zone_area_entered"]

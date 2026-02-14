@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dvowrxae8uoje"]
+
+[ext_resource type="FontFile" uid="uid://23gr8pmw4an4" path="res://UI/Fonts/bulletinV1.ttf" id="1_yqr3p"]
+
+[resource]
+font = ExtResource("1_yqr3p")
+font_size = 22

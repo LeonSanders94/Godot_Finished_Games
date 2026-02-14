@@ -1,0 +1,196 @@
+[gd_scene load_steps=8 format=3 uid="uid://eiwf2ucr5c1y"]
+
+[ext_resource type="Script" path="res://Items/atributes_text.gd" id="1_1ai3q"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_21cwi"]
+color = Color(0.333989, 0.00139319, 0.677651, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrqmy"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qcbov"]
+color = Color(0.886262, 0.886261, 0.886262, 1)
+thickness = 2
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_aw3og"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57dch"]
+texture = SubResource("CanvasTexture_aw3og")
+modulate_color = Color(0.682353, 0.00392157, 0.87451, 0.0823529)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t4ies"]
+font_size = 12
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="top" type="Panel" parent="Control"]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 145.0
+offset_top = 280.0
+offset_right = 903.0
+offset_bottom = 320.0
+theme_override_styles/panel = SubResource("StyleBoxLine_21cwi")
+
+[node name="top4" type="Panel" parent="Control"]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 904.0
+offset_top = 281.0
+offset_right = 1351.0
+offset_bottom = 321.0
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_21cwi")
+
+[node name="top3" type="Panel" parent="Control"]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 145.0
+offset_top = 728.0
+offset_right = 903.0
+offset_bottom = 768.0
+theme_override_styles/panel = SubResource("StyleBoxLine_21cwi")
+
+[node name="top2" type="Panel" parent="Control"]
+z_index = 1
+z_as_relative = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 728.0
+offset_right = 591.0
+offset_bottom = 768.0
+rotation = -1.5708
+theme_override_styles/panel = SubResource("StyleBoxLine_21cwi")
+
+[node name="shop_background" type="Panel" parent="Control"]
+modulate = Color(0.0784314, 0.0784314, 0.0784314, 0.517647)
+z_index = -1
+layout_mode = 0
+offset_left = 144.0
+offset_top = 280.0
+offset_right = 904.0
+offset_bottom = 728.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrqmy")
+
+[node name="white_line" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 284.0
+offset_right = 899.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxLine_qcbov")
+
+[node name="white_line3" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 286.0
+offset_right = 598.0
+offset_bottom = 326.0
+rotation = 1.57079
+theme_override_styles/panel = SubResource("StyleBoxLine_qcbov")
+
+[node name="white_line4" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 282.0
+offset_right = 1348.0
+offset_bottom = 322.0
+rotation = 1.57079
+theme_override_styles/panel = SubResource("StyleBoxLine_qcbov")
+
+[node name="white_line2" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 727.0
+offset_right = 897.0
+offset_bottom = 767.0
+theme_override_styles/panel = SubResource("StyleBoxLine_qcbov")
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Next_Round" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 657.0
+offset_right = 885.0
+offset_bottom = 714.0
+text = "Next Round"
+
+[node name="Item_1" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 371.0
+offset_right = 369.0
+offset_bottom = 517.0
+text = "Item_1"
+
+[node name="Item_2" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 371.0
+offset_right = 527.0
+offset_bottom = 517.0
+text = "Item_2"
+
+[node name="Item_3" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 372.0
+offset_right = 684.0
+offset_bottom = 518.0
+text = "Item_3"
+
+[node name="Player_Current_attributes" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player_Attribute_Space" type="Panel" parent="Player_Current_attributes"]
+layout_mode = 0
+offset_left = 727.0
+offset_top = 325.0
+offset_right = 884.0
+offset_bottom = 631.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_57dch")
+
+[node name="Atrributes_title" type="Label" parent="Player_Current_attributes/Player_Attribute_Space"]
+layout_mode = 0
+offset_right = 157.0
+offset_bottom = 25.0
+text = "Attributes"
+horizontal_alignment = 1
+
+[node name="Atributes_text" type="Label" parent="Player_Current_attributes/Player_Attribute_Space"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 45.0
+offset_right = 182.0
+offset_bottom = 294.0
+text = "Health: 0
+Armor: 0 
+Shield: 0
+Speed: 0
+Damage: 0 
+Fire Rat: 0 
+RoboMechanic: 0
+Maneuvering: 0 
+Robo AI Integrations: 0
+LifeSteal: 0
+Repair Kits: 0 
+
+"
+label_settings = SubResource("LabelSettings_t4ies")
+script = ExtResource("1_1ai3q")

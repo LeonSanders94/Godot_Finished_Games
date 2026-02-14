@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvg47hk77mom"]
+
+[ext_resource type="AudioStream" uid="uid://dwpbdepdlr32g" path="res://assets/kitchen-blog-positive-travel-happy-187696.mp3" id="1_g70yu"]
+
+[node name="soundplayer" type="Node2D"]
+
+[node name="KitchenBlogPositiveTravelHappy187696" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_g70yu")
+volume_db = -33.494
+autoplay = true
+parameters/looping = true

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3leynq7lbyla"]
+
+[ext_resource type="Script" uid="uid://b2kifaciuvbc7" path="res://scenes/cheese.gd" id="1_6ih6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6wpu"]
+size = Vector2(192, 8)
+
+[node name="Cheese" type="Node2D"]
+
+[node name="Cheese" type="CharacterBody2D" parent="." groups=["ingredients"]]
+position = Vector2(-96, 0)
+safe_margin = 0.001
+script = ExtResource("1_6ih6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cheese"]
+position = Vector2(96, 4)
+shape = SubResource("RectangleShape2D_a6wpu")
+
+[node name="Polygon2D" type="Polygon2D" parent="Cheese"]
+color = Color(0.90101194, 0.6092403, 0.28908226, 1)
+polygon = PackedVector2Array(0, 0, 192, 0, 192, 8, 0, 8)

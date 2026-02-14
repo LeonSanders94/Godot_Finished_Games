@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://bw7b6yvuc6q0i"]
+
+[ext_resource type="Script" uid="uid://cq7i46se842rm" path="res://scenes/debug_test.gd" id="1_ac7lm"]
+[ext_resource type="PackedScene" uid="uid://ceq4ydqjklv85" path="res://scenes/platform.tscn" id="1_bb3yq"]
+[ext_resource type="Texture2D" uid="uid://87xk3yr74m5u" path="res://assets/diner_int.png" id="4_ski4u"]
+[ext_resource type="PackedScene" uid="uid://c2pkwwvwsv317" path="res://scenes/meat_1.tscn" id="4_vbm4d"]
+[ext_resource type="LabelSettings" uid="uid://c7ba4xdsbqkbk" path="res://scenes/UI_settings.tres" id="5_ski4u"]
+[ext_resource type="Script" uid="uid://0kevc4qyeyh1" path="res://scenes/score.gd" id="6_sa7ls"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rrrmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bb3yq"]
+size = Vector2(1151, 123)
+
+[node name="debug_test" type="Node"]
+script = ExtResource("1_ac7lm")
+
+[node name="DinerInt" type="Sprite2D" parent="."]
+modulate = Color(0.56, 0.5152, 0.55776006, 0.9843137)
+position = Vector2(576, 320)
+scale = Vector2(2.255, 2.7749999)
+texture = ExtResource("4_ski4u")
+
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(331, 413)
+rotation = 1.5707964
+physics_material_override = SubResource("PhysicsMaterial_rrrmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-204.99998, 379)
+shape = SubResource("RectangleShape2D_bb3yq")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(331, 413)
+rotation = 1.5707964
+physics_material_override = SubResource("PhysicsMaterial_rrrmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-149.00005, -877)
+shape = SubResource("RectangleShape2D_bb3yq")
+
+[node name="Player_platform" parent="." instance=ExtResource("1_bb3yq")]
+position = Vector2(304, 454)
+
+[node name="meat_1" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(230, -133)
+
+[node name="meat_2" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(797, -2105)
+
+[node name="meat_3" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(384, -831)
+
+[node name="meat_4" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(145, -581)
+
+[node name="meat_5" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(816, -2420)
+
+[node name="meat_6" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(796, -1360)
+
+[node name="meat_7" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(314, -1876)
+
+[node name="meat_8" parent="." instance=ExtResource("4_vbm4d")]
+position = Vector2(184, -1052)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="score" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -226.0
+offset_top = -77.0
+offset_right = -34.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Score: 0"
+label_settings = ExtResource("5_ski4u")
+horizontal_alignment = 1
+uppercase = true
+script = ExtResource("6_sa7ls")
